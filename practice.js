@@ -24,7 +24,6 @@ var newCost =30 -12;
 var multiply = 5 * 5; // assigns 25 to multiply
 
 //  Divide inJavaScript
-
 var divideTwoNumbers = 25 / 5;
 
 
