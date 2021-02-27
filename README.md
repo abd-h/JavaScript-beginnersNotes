@@ -24,3 +24,11 @@
 - Access Array Data with Indexes
 - Modify Array Data With Indexes
 - Access Multi-Dimensional Arrays With Indexe
+
+### Manipulate Arrays With: 
+
+-**.push()**
+-**.pop()**
+-**.shift()**
+-**.unshift()**
+
