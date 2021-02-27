@@ -32,3 +32,9 @@
 -**.shift()**
 -**.unshift()**
 
+## Reusable Functions
+
+-**Global and Local scope**
+-**Return a Value from a Function with Return statement**
+-**Understanding Undefined Value returned from a Function**
+-**Assignment with a Returned Value**
