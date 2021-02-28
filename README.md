@@ -5,6 +5,7 @@
 - control + alt  + N
 
 ## Declaring numbers with JavaScript
+
 - inline 1 - 16.
 - Adding , Subtructing, Division  and finding remainers two numbers in line 16 to 43.
 
@@ -25,7 +26,7 @@
 - Modify Array Data With Indexes
 - Access Multi-Dimensional Arrays With Indexe
 
-### Manipulate Arrays With: 
+### Manipulate Arrays With
 
 -**.push()**
 -**.pop()**
@@ -38,3 +39,8 @@
 -**Return a Value from a Function with Return statement**
 -**Understanding Undefined Value returned from a Function**
 -**Assignment with a Returned Value**
+
+## Boolean
+
+-**Understanding Boolean Values**
+-**Use Conditional Logic with If Statements**
