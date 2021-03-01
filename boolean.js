@@ -451,3 +451,103 @@ console.log(golfScore(4, 5)) // should return "Bogey"
 console.log(golfScore(4, 6)) // should return "Double Bogey"
 console.log(golfScore(4, 7)) // should return "Go Home!"
 console.log(golfScore(5,  9)) // should return "Go Home!"
+
+//  Selecting from Many Options with Switch Statement
+
+// If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which define various posible values. Statements are execuetd from the first matched value until break is encountered.
+
+//  Here is example of a switch statement
+
+function lowerCase(loweCaseLetter) {
+    switch (lowerCaseLetter) {
+        case "a":
+            console.log("A");
+            break;
+        case "b":
+            console.log(B)   ; 
+    
+            break;
+    }
+}
+// case values are tested with strict eqality ( === ). The break tells JavaScript to stop executing statement. If break is omitted next statement will be exacuted.
+
+function caseInSwitch(val) {
+    var newAnswer = "";
+    switch (val) {
+        case 1:
+            return "alpha";
+            break;
+        case 2:
+            return "beta";
+            break;
+        case 3:
+            return "gamma";
+            break;
+        case 4:
+            return "delta";  
+            break;
+    }
+    return newAnswer;
+}
+console.log(caseInSwitch(1));
+
+// Adding Default Option in Switch statements
+
+// In a switch statement you may not be able to specify all possible values as case statements. Instead , you can add default statement which will be executed if  no matching case statements are found. Think of it like the final else statement in an if / else chain.
+
+//  A default statement should be the last case.
+
+function testDefault(val) {
+    var answer2 = "";
+    switch (val) {
+        case "a":
+            answer2 = "apple";
+            break;
+        case "b":
+           answer2 ="bird";
+            break;
+        case "c":
+            answer2 = "cat"
+            break;
+    
+        default:
+            answer2 = "stuff";
+            break;
+    }
+    return answer2;
+}
+
+console.log(testDefault("a"));
+
+// Multiple Identical Options in Switch Statements
+
+// If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:
+
+function sequentialSizes(val) {
+    var result3 = "";
+    switch(val) {
+        case 1:
+        case 2:
+        case 3:
+            result3 = "Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            result3 = "Mid";
+            break;
+        case 7:
+        case 8:
+        case 9:
+            result3 = "High";
+    }
+    return result3;
+}
+console.log(sequentialSizes(5));
+
+// Replacing If Else Chains with switch
+// If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:
+
+
+
+
