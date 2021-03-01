@@ -545,8 +545,7 @@ function sequentialSizes(val) {
 }
 console.log(sequentialSizes(5));
 
-// Replacing If Else Chains with switch
-// If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:
+
 
 
 
