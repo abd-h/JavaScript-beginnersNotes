@@ -73,6 +73,7 @@ console.log(testequal(12)); // Reads equal;
 //--------------------------------------------
 
 // Comparison with the Strict Equality Operator
+
 // Strict equality (===) is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
 
 // If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
@@ -212,6 +213,7 @@ console.log(testLessThan(54));
 //.............................................
 
 // Comparison with the Less Than Or Equal To Operator
+
 // The less than or equal to operator (<=) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns true. If the number on the left is greater than the number on the right, it returns false. Like the equality operator, less than or equal to converts data types.
 
 // Examples
@@ -383,3 +385,69 @@ function bar(x) {
 console.log(foo(0)) //returns "Less than one"
 console.log(bar(0)) // returns " Less than two"
 
+//  Chaning If  Else Statement
+
+// if / else statements can be chained together for complex logic. Here is example of pseudocode of multiple chained if / else if statement
+
+function testSize(num) {
+    if (num < 5) {
+        return "Tiny";
+    }
+    else if (num < 10) {
+        return "Small";
+    }
+    else if(num > 10 &&  num < 15) {
+        return "Medium";
+    }
+    else if (num < 20) {
+        return "Large";
+    }
+    else {
+        return "Huge"
+    }
+
+}
+console.log(testSize(4))
+
+// Golf Code Chellenge
+
+// n the game of golf each hole has a par meaning the average number of strokes a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.
+
+// Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):
+
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+function golfScore(par, strokes) {
+    if (strokes === 1 || par === 1) {
+        return "Hole-in-one!";
+    }
+    else if (strokes <= par -2) {
+        return "Eagle";
+    }
+    else if ( strokes === par -1) {
+        return "Birdie";
+    }
+    else if (strokes === par) {
+        return "Par";
+    }
+    else if (strokes === par + 1) {
+        return "Bogey";
+    }
+    else if (strokes === par + 2) {
+        return "Double Bogey";
+    }
+    else {
+        return "Go Home!";
+    }
+    return names
+}
+console.log(golfScore(4, 1)); // should return "Hole-in-one!"
+console.log(golfScore(4, 2)); // should return "Eagle"
+console.log(golfScore(5, 2)); // should return "Eagle"
+console.log(golfScore(4, 3)); // should return "Birdie"
+console.log(golfScore(4,  4)) // should return "Par"
+console.log(golfScore(1, 1)) // sould return "Hole-in-one!"
+console.log(golfScore(5, 5)) // should return "Par"
+console.log(golfScore(4, 5)) // should return "Bogey"
+console.log(golfScore(4, 6)) // should return "Double Bogey"
+console.log(golfScore(4, 7)) // should return "Go Home!"
+console.log(golfScore(5,  9)) // should return "Go Home!"

@@ -44,3 +44,20 @@
 
 -**Understanding Boolean Values**
 -**Use Conditional Logic with If Statements**
+-**Comparison with the Equality Operator**
+-**Comparison with the Strict Equality Operator**
+-**Comparison with the Inequality Operator**
+-**Comparison with the Strict Inequality Operator**
+-**Comparison with the Greater Than Operator**
+-**Comparison with the Greater Than or Equal to Operater**
+-**Comparison with the Less Than Operator**
+-**Comparison with the Less Than Or Equal To Operator**
+-**Comparison with Logical And Operator**
+-**Comparisons with the Logical or Operator**
+-**Introducing Else statement**
+-**With Else statement**
+-**Indroducing Else If Statement**
+-**Logical Order in If Else Statements**
+-**And the second just switches the order of the statement.**
+-**Chaning If  Else Statement**
+-**Golf Code Chellenge**
