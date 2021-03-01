@@ -43,7 +43,7 @@
 ## Boolean
 
 - **Understanding Boolean Values**
-- **Use Conditional Logic with If Statements**
+- Use Conditional Logic with If Statements
 - **Comparison with the Equality Operator**
 - **Comparison with the Strict Equality Operator**
 - **Comparison with the Inequality Operator**
