@@ -77,3 +77,5 @@
 - *Returning Boolean Values from functions*
 - *Return Ealy Pattern for Function*
 - *Counting Cards*
+
+## build-js-object.js added
