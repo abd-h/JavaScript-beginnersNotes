@@ -67,3 +67,10 @@
 - **And the second just switches the order of the statement.**
 - **Chaning If  Else Statement**
 - **Golf Code Chellenge**
+- *Selecting from Many Options with Switch*
+- *Here is example of a switch statement*
+- *Case values are tested with strict eqality*
+- *Adding Default Option in Switch statements*
+- *A default statement should be the last*
+- *Multiple Identical Options in Switch Statements*
+- *Replacing If  / Else Chains with switch*

@@ -469,7 +469,7 @@ function lowerCase(loweCaseLetter) {
             break;
     }
 }
-// case values are tested with strict eqality ( === ). The break tells JavaScript to stop executing statement. If break is omitted next statement will be exacuted.
+// Case values are tested with strict eqality ( === ). The break tells JavaScript to stop executing statement. If break is omitted next statement will be exacuted.
 
 function caseInSwitch(val) {
     var newAnswer = "";
@@ -544,6 +544,130 @@ function sequentialSizes(val) {
     return result3;
 }
 console.log(sequentialSizes(5));
+
+// Replacing If  / Else Chains with switch
+//  if you have many optionsto choose from, a switchstatement can be easier to write than many chainedif else statements. The following:
+
+function chainedIfElse(val) {
+    var chainedIfs = "";
+    if(val ===1) {
+        chainedIfs = "a";
+    }
+    else if (val === 2) {
+        chainedIfs = "b";
+    }
+    else {
+        chainedIfs = "c";
+    }
+    return chainedIfs;
+}
+function notChainedIf(val) {
+    var notChained = "";
+    switch(val) {
+        case 1:
+            notChained = "a";
+            break;
+        case 2:
+            notChained = "b";
+            break;
+        default:
+            notChained = "c";
+    }
+    return notChained;
+}
+
+function chainToSwitch(val) {
+    var answer = "";
+    switch(val) {
+        case "bob":
+            answer = "Marley";
+            break;
+        case 42:
+            answer = "The Answer";
+            break;
+        case 1:
+            answer = "There is no #1";
+            break;
+        case 99:
+            answer = "Missed me by this much!";
+            break;
+        case 7:
+            answer = "Ate Nine";
+    }
+    return answer;
+}
+console.log(chainToSwitch(7));
+
+// Returning Boolean Values from functions
+
+// You may recall from Comparison with the Equality Operator that all comparison operators return a bolean true or false value.
+
+// Sometimes people use an if / else statement to do a comparison, like this
+
+function isEqualTo(a, b) {
+    if (a === b){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(isEqualTo(9, 10)); // returns false
+
+// But theres better way to do this . Since === returns true or false we can return the result of the comparison:
+
+function equalTo(a, b) {
+    return a === b;
+}
+console.log(equalTo(10, 10));// returns true
+
+// Return Ealy Pattern for Function
+
+// When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+
+function myFun(params) {
+    console.log("Hello");
+    return "World";
+    console.log("byebye");
+}
+// The above outputs "Hello" and returns "World", but "byebye" is never output, because function exits at the return statement.
+
+function abTest(a, b) {
+   if (a < 0 || b < 0) {
+       return undefined;
+   }
+   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+console.log(abTest(3, -3));
+
+
+// Counting Cards 
+var count = 0;
+function cc(cards) {
+    switch(cards) {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+         count++;
+         break;
+        case 10:
+        case 'J':
+        case 'Q':
+        case 'K':
+        case 'A':
+        count--;
+         break;
+    }
+    if (count > 0) {
+        return count + " Bet";
+    }
+    else {
+        return count + " Hold";
+    }
+}
+console.log(cc(2), cc(3), cc(7), cc('K'), cc('A'));
 
 
 
