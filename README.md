@@ -74,3 +74,6 @@
 - *A default statement should be the last*
 - *Multiple Identical Options in Switch Statements*
 - *Replacing If  / Else Chains with switch*
+- *Returning Boolean Values from functions*
+- *Return Ealy Pattern for Function*
+- *Counting Cards*
