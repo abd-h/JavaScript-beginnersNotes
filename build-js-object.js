@@ -261,7 +261,89 @@ ourMusic.myMusic = {
 }
 console.log(ourMusic);
 
+// Accessing Nested Objects
 
+// The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+// Here is a nested object:
+var ourStorage = {
+    "desk": {
+        "drawer": "stapler"
+    },
+    "cabinet": {
+        "top drawer": {
+            "folder1": "a file",
+            "folder2":  "secrets"
+        },
+        "bottom drawer": "soda"
+    }
+    
+};
+console.log(ourStorage.cabinet["top drawer"]["folder1"]);
+console.log(ourStorage.cabinet["top drawer"]["folder2"]);
+ 
+var myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+
+var gloveBoxContent = myStorage.car.inside["glove box"];
+console.log(gloveBoxContent);
+
+// Accessing Nested Arrays
+// As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+
+// Example
+
+var ourPet = [
+    {
+        animalType: "cat",
+        names: [
+            "Meowzer",
+            "fluffy",
+            "kit-cat"
+        ]
+    },
+    {
+        animalType: "dog",
+        names: [
+            "spot",
+            "bowser",
+            "frank"
+        ]
+    }
+];
+console.log(ourPet[0].names[1]);
+console.log(ourPet[1].names[1]);
+
+var myPlant = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+var secondTree = myPlant[1].list[1];
+console.log(secondTree);
 
 
 
