@@ -80,6 +80,91 @@ var entreeValue = testObject1["an entree"];
 var drinkValue = testObject1["the drink"];
 console.log(entreeValue, drinkValue);
 
+//  Accessing Objects with Properties with Veriables
+ 
+// Another  use of bracket notation on objects is access a property which is stored as value of veriable. This can be very useful for iterating through an object's properties or when accessing look up table.
+
+//  Eample 1
+
+var dogs = {
+    Fido: "Mutt",
+    Hunter: "Doberman",
+    Snoop : "Beagle"
+};
+var myDog1 = "Hunter";
+var myBreed = dogs[myDog1]; 
+console.log(myBreed); // "Doberman";
+
+// Example 2
+
+var someObj = {
+    propName: "John"
+};
+function propPrefix(str) {
+    var s = "prop";
+    return s + str;
+}
+console.log(propPrefix("Name"));
+var someProp = propPrefix("Name");
+console.log(someObj[someProp]);
+
+// Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name.
+
+var testObj = {
+    12: "Namath",
+    16: "Montana",
+    19:"Unitas"
+};
+var playerNumber =16;
+var player = testObj[playerNumber];
+console.log(player); // Montana
+
+// Updating Object Properties
+
+// After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+
+// For example, let's look at ourDog:
+
+var ourDog = {
+    "name":  "Camper",
+    "legs": 4,
+    "tail": 1,
+    "friends":  ["everything"]
+};
+
+// Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper".
+
+// Adding New properties to ourDog object:
+
+ourDog["Usual Owner's"] = "Young Adults";
+
+console.log(ourDog);
+//  Reads
+// ourDog = {
+//     "name":  "Camper",
+//     "legs": 4,
+//     "tail": 1,
+//     "friends":  ["everything"],
+//      "Usual Owner":  "Young Adults"
+// };
+
+// Changing the whole ourDog object;
+
+ourDog= {
+    Terrier: "fearsome",
+    speed: "25 mph",
+    distance: "5 miles",
+    diet: "lean Meat"
+};
+console.log(ourDog.diet="fresh lean meat");
+ourDog["speed"] = "30 mph";
+console.log(ourDog.speed);
+
+
+
+
+
+
 
 
 
