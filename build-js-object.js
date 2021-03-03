@@ -156,11 +156,110 @@ ourDog= {
     distance: "5 miles",
     diet: "lean Meat"
 };
+ourDog.bark = "Woof";
 console.log(ourDog.diet="fresh lean meat");
 ourDog["speed"] = "30 mph";
 console.log(ourDog.speed);
+console.log(ourDog)
 
+//  We can delete properties from objects like this:
 
+delete ourDog.diet;
+console.log(ourDog);// deletes diet properties;
+// ..........................................................
+
+// Using Objects for Lookups
+
+// Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+
+// Here is an example of a simple reverse alphabet lookup:
+
+var alpha = {
+    1: "Z",
+    2: "Y",
+    3: "X",
+    4: "W",
+    // ...
+    24: "C",
+    25: "B",
+    26: "A"
+};
+alpha[2]; // returns "Y"
+alpha[24]; // Returns C
+var value = 2;
+alpha[value];
+console.log(alpha[value]);
+
+function phonaticLookup(val) {
+    var result4 = "";
+    var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+};
+
+    result4 = lookup[val];
+    return result4
+}
+console.log(phonaticLookup("echo"));
+var result4 = phonaticLookup("bravo");
+console.log(result4);
+
+//  Testing Objects for Properties
+
+// Sometimes its useful to check if the property of given object exist or not. We can use the .hasOwnProperty(propname) method of objects to determine if  that object has given property name. 
+
+// .hasOwnProperty() returns true or false if the property is found or not.
+
+// Example
+
+var myObj ={
+    top: "hat",
+    bottom: "pants"
+};
+console.log(myObj.hasOwnProperty("top")); // reads true
+console.log(myObj.hasOwnProperty("middle")); // reads false
+
+function checkObj(obj, checkProp) {
+    if(obj.hasOwnProperty(checkProp)) {
+        return obj[checkObj];
+    }
+    return "Not Found"
+}
+
+// MAnipulating Complex Objects
+
+// Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+
+// Here's an example of a complex data structure:
+
+var ourMusic = [
+    {
+        "artist": "Daft Pank",
+        "title": "Home Work",
+        "release_year": 1997,
+        "format": [
+                "CD", "Cassette",
+                "LP"
+            ],
+        "gold": true
+    },
+];
+ourMusic.myMusic = {
+    "artist": "MJ",
+    "album": "thriller",
+    "year": 1988,
+    "format": [
+        "Cassette",
+        "CD",
+        "LP"
+    ],
+    "gold" : true
+}
+console.log(ourMusic);
 
 
 
