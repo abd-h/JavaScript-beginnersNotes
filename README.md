@@ -47,10 +47,6 @@
 - **Comparison with the Equality Operator**
 <<<<<<< HEAD
 -**Comparison with the Strict Equality Operator**
-=======
-- **Comparison with the Strict Equality Operator**
-
->>>>>>> afe271a8426ba2b5213f1e225eae0bc8b0bc2de5
 
 - **Comparison with the Inequality Operator**
 - **Comparison with the Strict Inequality Operator**
