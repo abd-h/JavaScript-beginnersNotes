@@ -70,11 +70,51 @@ console.log(myArray1);
 /**
  * Iterate Through an Array with a For Loop
  * 
- A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:
+ A common task in JavaScript is to iterate through the contents of an array. 
+ One way to do that is with a for loop. 
+ This code will output each element of the array arr to the console:
  */
 
  var arr = [10, 9, 8, 7, 6];
  for (var i = 0; i < arr.length; i++) {
-     console.log([i]);
+     console.log(arr[i]);
  }
- console.log(arr);
+
+ /**
+  * Remember that arrays have zero-based indexing, which means the last index of the array is length - 1. 
+ Our condition for this loop is i < arr.length, which stops the loop when i is equal to length. 
+ In this case the last iteration is i === 4 i.e. 
+ when i becomes equal to arr.length and outputs 6 to the console.
+  */
+
+var myArray2 = [2, 3, 4, 5, 6];
+var total = 0;
+for (var i = 0; i < myArray2.length; i++) {
+   total += myArray2[i];
+}
+console.log(total);
+
+/**
+ * Nesting For Loops
+If you have a multi-dimensional array, 
+you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 
+Here is an example:
+ */
+var arr1 = [[1, 2], [3, 4], [5, 6]];
+for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr1[i].length; j++){
+       console.log(arr1[i][j]);
+    }
+}
+ 
+function multiply(arr1){
+    var product = 1;
+    for (var i = 0; i < arr1.length; i++){
+        for (var j = 0; j < arr1[i].length; j++) {
+          product *= (arr1[i][j]);
+        }
+        
+    }
+    return product;
+}
+console.log(multiply([[1,2],[3,4],[5,6,7]]));
