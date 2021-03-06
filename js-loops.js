@@ -209,4 +209,23 @@ function sumOf(arr, n){
 }
 console.log(sumOf(2, 3));
 
+function countDown(number) {
+    newNumber= 0;
+    if(number == 0){
+     return newNumber = countDown(number - 1);
+     
+    }
+    else {
+        return newNumber;
+    }
+}
+console.log(newNumber10));
+
+    var countdown = [];
+    for (var i = 10; i > 0; i--) {
+        countdown.push(i);
+    }
+    console.log(countdown);
+    
+
 
