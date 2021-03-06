@@ -96,6 +96,7 @@ console.log(total);
 
 /**
  * Nesting For Loops
+ * 
 If you have a multi-dimensional array, 
 you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 
 Here is an example:
@@ -113,8 +114,99 @@ function multiply(arr1){
         for (var j = 0; j < arr1[i].length; j++) {
           product *= (arr1[i][j]);
         }
-        
     }
     return product;
 }
 console.log(multiply([[1,2],[3,4],[5,6,7]]));
+
+/**
+ * Iterare While Do Loop
+ * 
+ * The next type of loop is called do...while loop because it will first do one pass
+ * of the code inside the loop no matter what, and then continue to run the code
+ * while the specified condition evaluates to true.
+ */
+
+var ourArray2 = [];
+var i = 5;
+while (i < 5) {
+    ourArray2.push(i); i++;
+}
+console.log(ourArray2); //retuns []
+
+/**
+ * In this example, we initialize the value of ourArray to an empty array and the value of i to 5. 
+ * When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
+ */
+var ourArray3 = [];
+var i = 5
+do {
+    ourArray3.push(i); i++;
+} while(i < 5);
+console.log(ourArray3); // returns [5] ;
+
+/**
+ * In this case, we initialize the value of i to 5, just like we did with the while loop. When we get to the next line, there is no condition to evaluate, so we go to the code inside the curly braces and execute it. We will add a single element to the array and then increment i before we get to the condition check. When we finally evaluate the condition i < 5 on the last line, we see that i is now 6, which fails the conditional check, so we exit the loop and are done. At the end of the above example, the value of ourArray is [5]. Essentially, a do...while loop ensures that the code inside the loop will run at least once. Let's try getting a do...while loop to work by pushing values to an array.
+ */
+
+var ourArray4 = [];
+var i = 10;
+while (i < 5){
+    ourArray4.push(i); i++;
+}
+console.log(ourArray4);
+
+var ourArray5 = [];
+var i = 10;
+do {
+    ourArray5.push(i); i++;
+} while (i < 5);
+console.log(i);
+
+/**
+ * Replace Loops using Recursion
+Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
+ */
+function multiply1(arr, n) {
+    var product = 1;
+    for (var i = 0; i < n; i++){
+        product *= arr[i];
+    }
+   return product;
+}
+console.log(multiply1(4,1));
+
+/**
+ * However, notice that ... multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+ */
+
+function multiply2(arr, n) {
+    if (n <= 0){
+        return 1;
+    }
+    else {
+        return multiply2(arr, n -1) * arr[n -1];
+    }
+}
+function sum(arr, n) {
+    if(n <= 0){
+        return 0;
+    }
+    else {
+        return sum(arr, n - 1) + arr[n-1];
+    }
+}
+
+/**
+ * Recursion practice
+ */
+function sumOf(arr, n){
+    var newTotal =1;
+    for (var i = 0; i < n; i++){
+        newTotal *=arr
+    }
+    return newTotal;
+}
+console.log(sumOf(2, 3));
+
+
