@@ -167,14 +167,16 @@ console.log(i);
  * Replace Loops using Recursion
 Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
  */
-function multiply1(arr, n) {
-    var product = 1;
+
+function multiply(arr, n) {
+    var product2 = 0;
     for (var i = 0; i < n; i++){
-        product *= arr[i];
+        product2 +=arr[i]
     }
-   return product;
+    return product2;
 }
-console.log(multiply1(4,1));
+console.log(multiply([2, 3, 4, 4], 3));
+
 
 /**
  * However, notice that ... multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
@@ -182,20 +184,13 @@ console.log(multiply1(4,1));
 
 function multiply2(arr, n) {
     if (n <= 0){
-        return 1;
-    }
-    else {
-        return multiply2(arr, n -1) * arr[n -1];
-    }
-}
-function sum(arr, n) {
-    if(n <= 0){
         return 0;
     }
     else {
-        return sum(arr, n - 1) + arr[n-1];
+        return multiply2(arr, n -1) + arr[n -1];
     }
 }
+console.log(multiply2([2,3,4,5], 3));
 
 /**
  * Recursion practice
@@ -219,7 +214,7 @@ function countDown(number) {
         return newNumber;
     }
 }
-console.log(newNumber10));
+console.log(countDown(10));
 
     var countdown = [];
     for (var i = 10; i > 0; i--) {
