@@ -1,69 +1,65 @@
 /**
- * Store Multiple Values in one Variable using JavaScript ArraysPassed
+ * Use Bracket Notation to Find the Nth Character in a String
  */
 
- /**
-  * With JavaScript array variables, we can store several pieces of data in one place.
-  */
-  var pasta =["500g", 2];
-
-  // Nest one Array within Another Array
-  var sandwitch = [["Peanuts Butter", 2], ["Jelly", 4], ["Bread", 4]];
-  console.log(sandwitch);
-
-// Access Array Data with Indexes
-var data = pasta[0];
-console.log(data);//reads 500g
-
-// Modify Array Data With Indexes
-pasta[0] = "1000g";
-console.log(pasta);
-
-// Access Multi-Dimensional Arrays With Indexes
-
-// One way to think of a multi-dimensional array, is as an array of arrays.
-
-var multiArray = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [[10, 11, 12], 13, 14]
-];
-var myData = multiArray[2][2];
-console.log(myData); // Reads 9;
-
-// Manipulate Arrays With push()
-// An easy way to append data to the end of an array is via the push() function.
-
-var morePasta = [["500g",2], ["1kg", 1], 4]
-morePasta.push(900);
-console.log(morePasta);
-
-// Manipulate Arrays With pop()
-// pop() is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable.
-
-var three1 = [1, 4, 6];
-var oneDown = three1.pop();
-console.log(oneDown); // Reads 6
-console.log(three1); // Reads [1, 4]
-
-// Manipulate Arrays With shift()
-// If you want to remove the first?
-// That's where  .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.
-
-var array2 = [["Thomas", 3], ["Paul", 9], ["Jayson", 3]];
-var removeFromMyArray2 = array2.shift();
-console.log(removeFromMyArray2); // Reads ["Thomas", 3];
-console.log(array2); // Reads [["Paul", 9], ["Jayson", 3]];
-
-// .unshift() works exactly like .push(), but instead of adding the element at the end of the array, unshift() adds the element at the beginning of the array.
+/**
+ * You can also use bracket notation to get the character at other positions within a string.
+ * 
+ * Remember that computers start counting at 0, so the first character is actually the zeroth character.
+ */
 
 // Example
-array2.unshift(["Morrison", 25]);
-console.log(array2)// Reads array2 = [["Morrison", 25], ["Thomas", 3], ["Paul", 9], ["Jayson", 3]];
 
-// Shopping List consisting of Arrays and Subarrays. 
+var foreName = "Cabdifataax";
+var foreNameLength = foreName[5];
+console.log(foreNameLength); // returns 
 
-var shoppingList = [["Banana", 10], ["Tomato", 6], ["Carrots", 15], ["Patatos", 9], ["Onions", 6]];
+/**
+ * Use Bracket Notation to Find the Last Character in a String
+ * 
+ * In order to get the last letter of a string, you can subtract one from the string's length.
+ * 
+ * For example, if var sirName = "Jibriil", you can get the value of the last letter of the string by using firstName[firstName.length - 1]
+ */
 
-  
+// Example
+
+var sirName = "Jibriil";
+var lastLetterOflastName = sirName[sirName.length - 1];
+console.log(lastLetterOflastName);
+
+/**
+ * Use Bracket Notation to Find the Nth-to-Last Character in a StringPassed
+You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.
+ */
+
+// Example
+
+var thirdLastLetter = sirName[sirName.length -3];
+console.log(thirdLastLetter);
+
+/**Store Multiple Values in one Variable using JavaScript Arrays
+ * 
+With JavaScript array variables, we can store several pieces of data in one place.
+
+You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: */
+
+var chickenSandwich = ["Chicken Breast",  "Spices", 1 ];
+
+console.log(chickenSandwich.length);
+
+var periperiSandwich = [["Chicken Breast",  1], ["Spices",  2, ["Peri Pri", 1],["Classic Babaque",1]], ["Oil, Teaspoon", 1], ["Cooking Time in mins", 10] ];
+
+console.log(periperiSandwich.length);
+
+/**
+ * Access Array Data with Indexes 
+ 
+We can access the data inside arrays using indexes.
+
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
+
+ */
+// Example
+var accessArray = [50,  60, 70];
+accessArray[0];

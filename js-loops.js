@@ -222,5 +222,103 @@ console.log(countDown(10));
     }
     console.log(countdown);
     
+    /**
+     * For something simple to start with – let’s write a function pow(x, n) that raises x to a natural power of n. In other words, multiplies x by itself n times.
+     * 1) pow(2, 2) = 4
+     * 2)pow(2, 3) = 8
+     * 3)pow(2, 4) = 16
+     * 
+     */
+function pow(x, n){
+    let newNumber = 1;
+    for (var i = 0; i < n; i++){
+        newNumber *= x;
+    }
+    return newNumber;
+}
+console.log(pow(2, 3));
 
+function  pow1(x, n) {
+    if (n == 1){
+        return x;
+    }
+    else {
+        x * pow(x, n-1);
+    }
+    
+}
+console.log(pow(2, 4));
+/**
+ * For example, to calculate pow(2, 4) the recursive variant does these steps:
 
+pow(2, 4) = 2 * pow(2, 3)
+pow(2, 3) = 2 * pow(2, 2)
+pow(2, 2) = 2 * pow(2, 1)
+pow(2, 1) = 2
+So, the recursion reduces a function call to a simpler one, and then – to even more simpler, and so on, until the result becomes obvious.
+
+Recursion is usually shorter
+A recursive solution is usually shorter than an iterative one.
+
+Here we can rewrite the same using the conditional operator ? instead of if to make pow(x, n) more terse and still very readable:
+
+function pow(x, n) {
+  return (n == 1) ? x : (x * pow(x, n - 1));
+}
+The maximal number of nested calls (including the first one) is called recursion depth. In our case, it will be exactly n.
+
+The maximal recursion depth is limited by JavaScript engine. We can rely on it being 10000, some engines allow more, but 100000 is probably out of limit for the majority of them. There are automatic optimizations that help alleviate this (“tail calls optimizations”), but they are not yet supported everywhere and work only in simple cases.
+
+That limits the application of recursion, but it still remains very wide. There are many tasks where recursive way of thinking gives simpler code, easier to maintain.
+ */
+//....................................
+
+// Profile Lookup
+var contacts =[
+    {
+        "firstName" : "Akira",
+        "lastName":  "Laine",
+        "number": "0543236543",
+        "likes": [
+            "Pizza", "Coding", "Brownie Points"
+        ]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": [
+            "Hogwarts", "Magic", "Hagrid"
+        ]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Homes",
+        "number": "0487345643",
+        "likes": [
+            "Intriguing Cases", "Violin"
+        ]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": [
+            "javaScript", "Game", "foxes"
+        ]
+    }
+] ;
+
+function lookUpProfile(name, prop) {
+   for (var i = 0; i < contacts.length; i++) 
+   if (contacts[i].firstName === name) {
+       if (prop in contacts[i]) {
+           return contacts[i][prop];
+       }
+       else {
+           return"No such contact";
+       }
+   }
+   return "No such property"
+}
+console.log(contacts[i]);
