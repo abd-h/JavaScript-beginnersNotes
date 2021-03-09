@@ -45,7 +45,7 @@
 - **Understanding Boolean Values**
 - **Use Conditional Logic with If Statements**
 - **Comparison with the Equality Operator**
-<<<<<<< HEAD
+
 -**Comparison with the Strict Equality Operator**
 
 - **Comparison with the Inequality Operator**
