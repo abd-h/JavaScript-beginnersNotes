@@ -109,7 +109,7 @@ iCon += "I come Second.";
  console.log(lastNameLength)
 
  /**
-  * Use Bracket Notation to Find the First Character in a StringPassed
+  * Use Bracket Notation to Find the First Character in a String
   */
 
   var firstLetterOfLastName = myLastName[0];
