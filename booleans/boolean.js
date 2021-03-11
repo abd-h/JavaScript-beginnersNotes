@@ -484,13 +484,16 @@ console.log(golfScore(4, 6)) // should return "Double Bogey"
 console.log(golfScore(4, 7)) // should return "Go Home!"
 console.log(golfScore(5,  9)) // should return "Go Home!"
 
-//  Selecting from Many Options with Switch Statement
+/*
+Selecting from Many Options with Switch Statement
 
-// If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which define various posible values. Statements are execuetd from the first matched value until break is encountered.
+If you have many options to choose from, use a switch statement. 
+A switch statement tests a value and can have many case statements which define various posible values. Statements are execuetd from the first matched value until break is encountered.
 
-//  Here is example of a switch statement
+Here is example of a switch statement
+*/
 
-function lowerCase(loweCaseLetter) {
+function lowerCase(lowerCaseLetter) {
     switch (lowerCaseLetter) {
         case "a":
             console.log("A");
@@ -501,33 +504,36 @@ function lowerCase(loweCaseLetter) {
             break;
     }
 }
-// Case values are tested with strict eqality ( === ). The break tells JavaScript to stop executing statement. If break is omitted next statement will be exacuted.
+/*
+Case values are tested with strict eqality ( === ). 
+The break tells JavaScript to stop executing statement. If break is omitted next statement will be exacuted.
+*/ 
 
 function caseInSwitch(val) {
     var newAnswer = "";
     switch (val) {
         case 1:
-            return "alpha";
+            newAnswer = "alpha";
             break;
         case 2:
-            return "beta";
+            newAnswer = "beta";
             break;
         case 3:
-            return "gamma";
+            newAnswer ="gamma";
             break;
         case 4:
-            return "delta";  
+            newAnswer = "delta";  
             break;
     }
     return newAnswer;
 }
 console.log(caseInSwitch(1));
 
-// Adding Default Option in Switch statements
+/*
+            Adding a Default Option in Switch Statements
+In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.
 
-// In a switch statement you may not be able to specify all possible values as case statements. Instead , you can add default statement which will be executed if  no matching case statements are found. Think of it like the final else statement in an if / else chain.
-
-//  A default statement should be the last case.
+A default statement should be the last case.        */
 
 function testDefault(val) {
     var answer2 = "";
@@ -549,12 +555,11 @@ function testDefault(val) {
     return answer2;
 }
 
-console.log(testDefault("a"));
+console.log(testDefault("c"));
 
-// Multiple Identical Options in Switch Statements
+/*          Multiple Identical Options in Switch Statements
 
-// If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:
-
+// If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:     */ 
 function sequentialSizes(val) {
     var result3 = "";
     switch(val) {
@@ -577,8 +582,8 @@ function sequentialSizes(val) {
 }
 console.log(sequentialSizes(5));
 
-// Replacing If  / Else Chains with switch
-//  if you have many optionsto choose from, a switchstatement can be easier to write than many chainedif else statements. The following:
+/*          Replacing If  / Else Chains with switch
+if you have many options to choose from, a switchstatement can be easier to write than many chainedif else statements. The following: */ 
 
 function chainedIfElse(val) {
     var chainedIfs = "";
@@ -666,7 +671,7 @@ function myFun(params) {
 
 function abTest(a, b) {
    if (a < 0 || b < 0) {
-       return undefined;
+       return `The answer is ${undefined}`;
    }
    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }

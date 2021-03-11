@@ -1,10 +1,11 @@
-// Build JavaScript Objects
-// You may have heard the term object before.
+/*            Build JavaScript Objects
+You may have heard the term object before.
 
-// Object  are similar to arrays, except that instead of using index to access their date, you access the data tin object through what are called properties.
-// Objects are usefull for storing data in a structured way, and can represent real world objects, like cat.
+Object  are similar to arrays, except that instead of using index to access their data, you access the data in object through what are called properties.
+Objects are usefull for storing data in a structured way, and can represent real world objects, like cat.
 
-// Example
+Example
+ */
 
 var cat = {
     "name" : "Whiskers",
@@ -19,6 +20,8 @@ var anotherObject = {
     5: "Five",
     "Model": "Mondeo"
 };
+console.log(typeof anotherObject.make); // returns string
+/*However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.*/
 
 var newLocal = {
     "name": "Yorshire Terrier",
@@ -29,13 +32,14 @@ var newLocal = {
 var myDog = newLocal;
 console.log(myDog);
 
-// Accessing Object Properties with Dot Notation
+/*          Accessing Object Properties with Dot Notation
 
-// There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.
+There are two ways to access the properties of an object: 
+dot notation (.) and bracket notation ([]), similar to an array.
 
-// Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
 
-// Here is a sample of using dot notation (.) to read an object's property:
+Here is a sample of using dot notation (.) to read an object's property:*/ 
 
 var myObject = {
     prop1: "val1",
@@ -44,6 +48,8 @@ var myObject = {
 var prop1val1 = myObject.prop1; // Returns "val1"
 var prop2val2 = myObject.prop2; // Reads "val2"
 console.log(prop1val1, prop2val2);
+/*prop1val would have a value of the string val1, 
+and prop2val would have a value of the string val2.*/
 
 var testObject = {
     "hat": "ballcap",
@@ -80,11 +86,11 @@ var entreeValue = testObject1["an entree"];
 var drinkValue = testObject1["the drink"];
 console.log(entreeValue, drinkValue);
 
-//  Accessing Objects with Properties with Veriables
+            /* Accessing Objects with Properties with Veriables
  
-// Another  use of bracket notation on objects is access a property which is stored as value of veriable. This can be very useful for iterating through an object's properties or when accessing look up table.
+Another  use of bracket notation on objects is access a property which is stored as value of veriable. This can be very useful for iterating through an object's properties or when accessing look up table.
 
-//  Eample 1
+     Eample 1 */
 
 var dogs = {
     Fido: "Mutt",
@@ -96,7 +102,7 @@ var myBreed = dogs[myDog1];
 console.log(myBreed); // "Doberman";
 
 // Example 2
-
+/*Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows: */
 var someObj = {
     propName: "John"
 };
@@ -119,11 +125,10 @@ var playerNumber =16;
 var player = testObj[playerNumber];
 console.log(player); // Montana
 
-// Updating Object Properties
+/*          Updating Object Properties
+After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
 
-// After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
-
-// For example, let's look at ourDog:
+// For example, let's look at ourDog: */
 
 var ourDog = {
     "name":  "Camper",
@@ -193,13 +198,13 @@ console.log(alpha[value]);
 function phonaticLookup(val) {
     var result4 = "";
     var lookup = {
-    "alpha": "Adams",
-    "bravo": "Boston",
-    "charlie": "Chicago",
-    "delta": "Denver",
-    "echo": "Easy",
-    "foxtrot": "Frank"
-};
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank"
+    };
 
     result4 = lookup[val];
     return result4
@@ -208,13 +213,12 @@ console.log(phonaticLookup("echo"));
 var result4 = phonaticLookup("bravo");
 console.log(result4);
 
-//  Testing Objects for Properties
+/*          Testing Objects for Properties
+Sometimes its useful to check if the property of given object exist or not. We can use the .hasOwnProperty(propname) method of objects to determine if  that object has given property name. 
 
-// Sometimes its useful to check if the property of given object exist or not. We can use the .hasOwnProperty(propname) method of objects to determine if  that object has given property name. 
+     .hasOwnProperty() returns true or false if the property is found or not.
 
-// .hasOwnProperty() returns true or false if the property is found or not.
-
-// Example
+// Example*/  
 
 var myObj ={
     top: "hat",
@@ -230,11 +234,11 @@ function checkObj(obj, checkProp) {
     return "Not Found"
 }
 
-// MAnipulating Complex Objects
+/*          Manipulating Complex Objects
 
-// Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
 
-// Here's an example of a complex data structure:
+// Here's an example of a complex data structure:*/ 
 
 var ourMusic = [
     {
@@ -261,11 +265,10 @@ ourMusic.myMusic = {
 }
 console.log(ourMusic);
 
-// Accessing Nested Objects
+/* Accessing Nested Objects
+The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
 
-// The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
-
-// Here is a nested object:
+// Here is a nested object:*/
 var ourStorage = {
     "desk": {
         "drawer": "stapler"
@@ -298,8 +301,8 @@ var myStorage = {
 var gloveBoxContent = myStorage.car.inside["glove box"];
 console.log(gloveBoxContent);
 
-// Accessing Nested Arrays
-// As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+/*          Accessing Nested Arrays
+As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.*/ 
 
 // Example
 
