@@ -118,19 +118,52 @@ for (var i =0; i < nestedArr.length; i++) {
     }
 }
     
-    /*This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.
+    /*This outputs each sub-element in arr one at a time. 
+Note that for the inner loop, we are checking the .length of arr[i], 
+since arr[i] is itself an array.
 */
+function multiplAll(arr) {
+    var product = 1;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j =0; j < arr[i].length; j++){
+            product *= arr[i][j];
+        }
+    }
+    return product
+}
 /**
             Iterare While Do Loop
 The next type of loop is called do...while loop because it will first do one pass
  of the code inside the loop no matter what, and then continue to run the code
  while the specified condition evaluates to true.
  */
+var doWhileArray = [];
+var i = 0;
+do {
+    doWhileArray.push(i);
+    i++;
+} while (i < 5);
+
+/*The example above behaves similar to other types of loops, and the resulting array will look like [0, 1, 2, 3, 4]. However, what makes the do...while different from other loops is how it behaves when the condition fails on the first check. Let's see this in action: Here is a regular while loop that will run the code in the loop as long as i < 5:*/
+
+var whileArray = [];
+var i = 5;
+while (i < 5){
+    whileArray.push[i];
+    i++;
+}
+
+var testDoWhile = [];
+var i = 5;
+do {
+    testDoWhile.push([i]);
+    i++;
+} while(i < 5);
+console.log(testDoWhile);
 
 
-/**
- * In this example, we initialize the value of ourArray to an empty array and the value of i to 5. 
- * When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
+/*In the example above, we initialize the value of ourArray to an empty array and the value of i to 5. 
+When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
  */
 // returns [5] ;
 
