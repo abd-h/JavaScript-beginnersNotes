@@ -13,3 +13,14 @@ const myArrowFunc = () => {
     const myVarArrow = value;
     return myVarArrow;
 }
+
+/*When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword return as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:*/
+
+const inLineFunc = () => "value";
+
+/*Rewrite the function assigned to the variable magic which returns a new Date() to use arrow function syntax. Also, make sure nothing is defined using the keyword var.
+var magic = function() {
+  return new Date();
+};*/
+
+const magic = () => new Date();
