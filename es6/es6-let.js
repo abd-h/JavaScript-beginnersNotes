@@ -79,8 +79,35 @@ for (let i = 0; i < 3; i++){
     }
 }
 console.log(printNumberTwo());
-console.log(i);
+// console.log(i);
 
 /*Here the console will display the value 2, and an error that i is not defined.
 
-i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() returned the correct value because three different i variables with unique values (0, 1, and 2) were created by the let keyword within the loop statement.*/
+i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() returned the correct value because three different i variables with unique values (0, 1, and 2) were created by the let keyword within the loop statement.
+
+Fix the code so that i declared in the if statement is a separate variable than i declared in the first line of the function. Be certain not to use the var keyword anywhere in your code.
+
+This exercise is designed to illustrate the difference between how var and let keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion.
+
+function checkScope() {
+  var i = 'function scope';
+  if (true) {
+    i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+  console.log('Function scope i is: ', i);
+  return i;
+} */
+function checkScope2(){
+    let i = 'function scope';
+    if (true) {
+        let i = 'block scope';
+        console.log('Block scope i is:', i);
+    }
+    {
+        console.log('function scope i:', i);
+    }
+    return i
+}
+//console.log(i);
+console.log(checkScope2());
