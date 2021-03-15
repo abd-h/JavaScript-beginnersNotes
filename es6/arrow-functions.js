@@ -24,3 +24,52 @@ var magic = function() {
 };*/
 
 const magic = () => new Date();
+
+/*          Write Arrow Functions with Parameters
+Just like a regular function, you can pass arguments into an arrow function.
+
+const doubler = (item) => item * 2;
+doubler(4);
+doubler(4) would return the value 8.
+
+If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.
+
+const doubler = item => item * 2;
+It is possible to pass more than one argument into an arrow function.
+
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2);
+multiplier(4, 2) would return the value 8.
+
+Rewrite the myConcat function which appends contents of arr2 to arr1 
+so that the function uses arrow function syntax.
+
+var myConcat = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+console.log(myConcat([1, 2], [3, 4, 5]));
+*/
+
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+console.log(myConcat([1, 2, 3], [4, 5, 6]));
+
+/*          Set Default Parameters for Your Functions
+In order to help us create more flexible functions, ES6 introduces default parameters for functions.
+
+Check out this code:*/
+const greeting = (name = "Everyone") => "Hello ".concat(name);
+console.log(greeting("John Toshack and Gary Liniker"));
+console.log(greeting());
+/*The console will display the strings Hello John and Hello Everyone.
+
+The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter name will receive its default value Anonymous when you do not provide a value for the parameter. You can add default values for as many parameters as you want.
+
+Modify the function increment by adding default parameters so that it will add 1 to number if value is not specified.
+const increment = (number, value) => number + value;*/
+const increment = (number = 1) => number + 2;
+console.log(increment(2, ));// return 4
+console.log(increment()); // return 3
+/*Modify the function increment by adding default parameters so that it will add 1 to number if value is not specified.*/
+const increment2 = (number, value = 1) => number + value;
+console.log(increment2(5, 2)); // returns 7
+console.log(increment2(5));// returns 6
