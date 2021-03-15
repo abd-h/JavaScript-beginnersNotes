@@ -73,5 +73,3 @@ console.log(increment()); // return 3
 const increment2 = (number, value = 1) => number + value;
 console.log(increment2(5, 2)); // returns 7
 console.log(increment2(5));// returns 6
-
-
