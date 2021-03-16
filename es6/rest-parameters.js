@@ -113,9 +113,9 @@ const user1 = {
 // Here's how you can give new veriables names in the assignment;
 const {name: user1Name, age: user1Age} = user1;
 /*You may read it as "get the value of user.name and assign it 
-to a new variable named userName" and so on. 
-The value of userName would be the string John Lewis, 
-and the value of userAge would be the number 200.*/
+to a new variable named user1Name" and so on. 
+The value of user1Name would be the string John Lewis, 
+and the value of user1Age would be the number 200.*/
 console.log(user1);
 console.log(user1Name);
 console.log(user1Age);
@@ -190,3 +190,96 @@ const LOCAL_FORECAST = {
 const {today: {low: lowToday, high: high1Today}} = LOCAL_FORECAST;
 console.log(lowToday);
 console.log(high1Today);
+
+
+/*          Use Destructuring Assignment to Assign Variables from Arrays
+ES6 makes destructuring arrays as easy as destructuring objects.
+
+One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.
+
+Destructuring an array lets us do exactly that:
+const [a, b] = [1,  2,  3, 4, 5, 6];
+console.log(a, b);
+The console will display the values of a and b as 1, 2.
+
+The variable a is assigned the first value of the array, and b is assigned the second value of the array. We can also access the value at any index in an array with destructuring by using commas to reach the desired index:*/ 
+const [a, b,,,c] = [1, 2, 3, 4, 5, 6];
+console.log(a,b,c);
+/* The console will display the values of a, b, and c as 1, 2, 5.
+
+Use destructuring assignment to swap the values of d and e so that d receives the value stored in e, and e receives the value stored in d.  */
+let d = 8,  e = 6;
+[d, e] = [e,d];
+
+console.log(d, e);
+
+/*          Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
+
+The result is similar to Array.prototype.slice(), as shown below:*/
+const [a1, b1, ...arr4] = [1,2, 3, 4, 5, 7];
+console.log(a1,b1);
+console.log(arr4);
+/*The console would display the values 1, 2 and [3, 4, 5, 7].
+
+Variables a1 and b1 take the first and second values from the array. After that, because of the rest parameter's presence, arr4 gets the rest of the values in the form of an array. The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out the last element of the original array.
+
+Use destructuring assignment with the rest parameter to perform an effective Array.prototype.slice() so that arr4 is a sub-array of the original array source with the first two elements omitted.
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  // Only change code below this line
+  const [,, ...arr] = list;
+  
+   // Change this line
+  // Only change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);*/
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+    const [,, ...arr5] = list;
+    return arr5;
+}
+const  arr5 = removeFirstTwo(source)
+console.log(arr5);
+console.log(source);
+
+/*          Use Destructuring Assignment to Pass an Object as a Function's Parameters
+In some cases, you can destructure the object in a function argument itself.
+
+Consider the code below:*/
+const profileUpdate = (profileData) => {
+    const {name, age, nationality,location} = profileData;
+}
+// This effectively destructures the object sent into the function. This can also be done in-place:
+const profileUpDate1 = ({name1, age1, nationality1, location1}) => {
+
+}
+/* When profileData is passed to the above function, the values are destructured from 
+the function parameter for use within the function. 
+
+ Use destructuring assignment within the argument to the function half to send only max and min inside the function. 
+
+ const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+const half = (stats) => (stats.max + stats.min) / 2.0;  returns 28.015, this is without destructuring parameters
+// Only change code above this line*/
+ const stats = {
+     max: 56.78,
+     standard_deviation: 4.34,
+     median: 34.54,
+     mode: 23.87,
+     min:-0.75,
+     avarage: 35.85
+ };
+ const half = ({max ,min}) => (max + min) / 2;
+ console.log(half(stats));
