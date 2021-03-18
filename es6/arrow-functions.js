@@ -73,3 +73,29 @@ console.log(increment()); // return 3
 const increment2 = (number, value = 1) => number + value;
 console.log(increment2(5, 2)); // returns 7
 console.log(increment2(5));// returns 6
+
+/*Below is exported codes*/
+const add = (a, b = 1) => {
+  return a + b;
+};
+
+function subtruct(a = 2, b =1) {
+ let result = 0;
+  if (a === b) {
+    result = "Equal";
+  }
+  else if (a > b) {
+    result = "a is Greater"
+  }
+  else {
+    result = "b is Greater"
+  }
+  return result;
+}
+export {add, subtruct};
+
+ export function divide(a, b) {
+ return (a / b);
+}
+
+console.log(divide(9, 3));
