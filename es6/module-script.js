@@ -55,6 +55,66 @@ Add the appropriate import statement that will allow the current file to use the
 */
 import { divide } from "./arrow-functions.js";
 console.log(divide(144, 6));
+/*          Use * to Import Everything from a FilePassed
+Suppose you have a file and you wish to import all of its contents into the current file. This can be done with the import * as syntax. Here's an example where the contents of a file named math_functions.js are imported into a file in the same directory:
+
+import * as myMathModule from "./math_functions.js";
+
+The above import statement will create an object called myMathModule. This is just a variable name, you can name it anything. The object will contain all of the exports from math_functions.js in it, so you can access the functions like you would any other object property. Here's how you can use the add and subtract functions that were imported:
+
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+*/
+import * as arrows from "./arrow-functions.js";
+console.log(arrows.add(3, 5));
+
+/*The code in this file requires the contents of the file: string_functions.js, that is in the same directory as the current file. Use the import * as syntax to import everything from the file into an object called stringFunctions
+
+import * as stringFunctions from "string_function.js"
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");./
+
+/*          Create an Export Fallback with export default
+In the export lesson, you learned about the syntax referred to as a named export. This allowed you to make multiple functions and variables available for use in other files.
+
+There is another export syntax you need to know, known as export default. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
+
+Below are examples using export default:
+
+export default function add(x, y) {
+    return x + y;
+} 
+export default function (x, y) {
+    return x + y;
+} 
+
+The first is a named function, and the second is an anonymous function.
+
+Since export default is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use export default with var, let, or const
+
+The following function should be the fallback value for the module. 
+Please add the necessary code to do so.*/
+
+export  function subtraction(x, y) {
+  return x - y;
+}
+export  default function (x, y) {
+    return x - y;
+}
+
+/*          Import a Default ExportPassed
+In the last challenge, you learned about export default and its uses. To import a default export, you need to use a different import syntax. In the following example, add is the default export of the math_functions.js file. Here is how to import it:
+
+import add from "./math_functions.js";
+
+The syntax differs in one key place. The imported value, add, is not surrounded by curly braces ({}). add here is simply a variable name for whatever the default export of the math_functions.js file is. You can use any name here when importing a default
+
+In the following code, import the default export from the math_functions.js file, found in the same directory as this file. Give the import the name subtract.
+import subtract from "./math_functions.js"
+*/
+
+
 
 
 
