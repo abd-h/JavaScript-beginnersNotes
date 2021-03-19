@@ -82,4 +82,80 @@ Up until now, you've looked at regexes to do literal matches of strings. But som
 Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are A, B, and C. Examples of lowercase are a, b, and c.
 
 You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the i flag. You can use it by appending it to the regex. An example of using this flag is /ignorecase/i. This regex can match the strings ignorecase, igNoreCase, and IgnoreCase.
+
+Write a regex fccRegex to match freeCodeCamp, no matter its case. Your regex should not match any abbreviations or variations with spaces.
+
+let myString = "freeCodeCamp";
+let fccRegex = /change/; // Change this line
+let result = fccRegex.test(myString);*/
+
+let myString1 = "freeCodeCamp";
+let fccRegex = /freecodecamp/i;
+let fccResult = fccRegex.test(myString1);
+console.log(fccResult);
+
+/*          Extract Matches
+So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the .match() method.
+
+To use the .match() method, apply the method on a string and pass in the regex inside the parentheses.
+
+Here's an example:*/
+"Hi, this is awesome practice".match(/awesome/);
+let yourString = "Regular experassions";
+let yourRegex = /experassions/;
+let yourResult = yourString.match(yourRegex);
+console.log(yourResult);
+/*Here the first match would return ["Hello"] and the second would return ["expressions"].
+
+Note that the .match syntax is the "opposite" of the .test method you have been using thus far:
 */
+"String".match(/regex/);
+/regex/.test("String");
+
+/*          Find More Than the First Match
+So far, you have only been able to extract or search a pattern once.*/
+
+let testStr1 = "repeat, Repeat, Repeat";
+let testRegex1 = /Repeat/;
+console.log(testStr1.match(testRegex1));
+//Here match would return ["Repeat"].
+
+//To search or extract a pattern more than once, you can use the g flag.
+let repeatRegex = /Repeat/g;
+console.log(testStr1.match(repeatRegex));// returns [Repeat, Repeat, Repeat];
+
+/*Using the regex starRegex, find and extract both Twinkle words from the string twinkleStar.
+
+Note
+You can have multiple flags on your regex like /search/gi*
+
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /change/; // Change this line
+let result = twinkleStar; // Change this line*/
+
+let twinkleStar ="Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+console.log(twinkleStar.match(starRegex));
+
+/*          Match Anything with Wildcard Period
+Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: .
+
+The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match hug, huh, hut, and hum, you can use the regex /hu./ to match all four words.
+*/
+let humStr = "I'll hum a song.";
+let humBear = "I'll hug a bear and then got to Pizza Hut, then ";
+let humRegex = /hu./;
+humBear.concat(humStr)
+console.log(humRegex.test(humBear.concat(humStr))
+);
+/*Complete the regex unRegex so that it matches the strings run, sun, fun, pun, nun, and bun. Your regex should use the wildcard character.
+
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /change/; // Change this line
+let result = unRegex.test(exampleStr);
+*/
+let exampleStr = " let's have fun with regular experassion run, sun, fun, pun, nun, and bun.";
+let unRegex = /un./i;
+let unResult = exampleStr.match(unRegex);
+console.log(unResult);
+
