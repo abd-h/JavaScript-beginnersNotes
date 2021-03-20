@@ -120,7 +120,7 @@ let testRegex1 = /Repeat/;
 console.log(testStr1.match(testRegex1));
 //Here match would return ["Repeat"].
 
-//To search or extract a pattern more than once, you can use the g flag.
+// To search or extract a pattern more than once, you can use the g flag.
 let repeatRegex = /Repeat/g;
 console.log(testStr1.match(repeatRegex));// returns [Repeat, Repeat, Repeat];
 
@@ -155,7 +155,81 @@ let unRegex = /change/; // Change this line
 let result = unRegex.test(exampleStr);
 */
 let exampleStr = " let's have fun with regular experassion run, sun, fun, pun, nun, and bun.";
-let unRegex = /un./i;
-let unResult = exampleStr.match(unRegex);
+let unRegex = /un./;
+let unResult = unRegex.test(exampleStr);
 console.log(unResult);
 
+/*          Match Single Character with Multiple Possibilities
+You learned how to match literal patterns (/literal/) and wildcard character (/./). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
+
+You can search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+
+For example, you want to match bag, big, and bug but not bog. You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters a, i,
+let myStrFlexy = "please only select words that begin with big, bag, bug and bog";
+let flexyRegex = /b[iau]/;
+let flexyResult = myStrFlexy.match(flexyRegex);
+console.log(flexyResult);
+*/
+let bag = "bag, bag";
+let big = "big";
+let bug = "bug";
+let bog = "bog";
+let flexyRegex = /b[aiu]g/g;
+console.log(bag.match(flexyRegex));
+console.log(big.match(flexyRegex));
+console.log(bug.match(flexyRegex));
+console.log(bog.match(flexyRegex));
+/* In order, the four match calls would return the values ["big"], ["bag"], ["bug"], and null.
+
+Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to find all the vowels in the string quoteSample.
+
+Note: Be sure to match both upper- and lowercase vowels.
+
+Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to find all the vowels in the string quoteSample.
+
+Note: Be sure to match both upper- and lowercase vowels.
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /change/; // Change this line
+let result = vowelRegex; // Change this line
+ */
+let quoteSample = "Bedware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi;
+let vowelResult = quoteSample.match(vowelRegex);
+console.log(vowelResult);
+//.............................................................................................................
+
+/*Match Letters of the Alphabet
+You saw how you can use character sets to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
+
+Inside a character set, you can define a range of characters to match using a hyphen character: -.
+
+For example, to match lowercase letters a through e you would use [a-e]. */
+
+let catStr = "cat";
+let batStr = "bat, Bat dart";
+let matStr = "mat";
+let bgRex = /[a-e]at/g;
+console.log(catStr.match(bgRex), batStr.match(bgRex), matStr.match(bgRex));
+
+/*In order, the three match calls would return the values ["cat"], ["bat"], and null.
+
+Match all the letters in the string quoteSample.
+
+Note: Be sure to match both uppercase and lowercase letters.
+
+Your regex alphabetRegex should match 35 items.
+
+Your regex alphabetRegex should use the global flag.
+
+Your regex alphabetRegex should use the case insensitive flag.
+
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /change/; // Change this line
+let result = alphabetRegex; // Change this line
+*/
+
+let quoteSample1 = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi;
+let quoteResult = quoteSample1.match(alphabetRegex);
+console.log(quoteResult);
