@@ -59,3 +59,52 @@ Use the shorthand character class \d to count how many digits are in movie title
 let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/; 
 let movieResult = movieName.match(numRegex).length;
+
+/*Match All Non-Numbers
+The last challenge showed how to search for digits using the shortcut \d with a lowercase d. You can also search for non-digits using a similar shortcut that uses an uppercase D instead.
+
+The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+
+Use the shorthand character class for non-digits \D to count how many non-digits are in movie titles.
+
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /change/; // Change this line
+let result = movieName.match(noNumRegex).length;*/
+let movieName1 = "2001: A Space Oddyssey";
+let nonNumRegex = /\D/g;
+let movieNameResult = movieName1.match(nonNumRegex).length;
+console.log(movieNameResult);
+
+/*          Restrict Possible Usernames
+Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+
+You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+
+1. Usernames can only use alpha-numeric characters.
+
+2. The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
+3. Username letters can be lowercase and uppercase.
+
+4. Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+Change the regex userCheck to fit the constraints listed above.
+
+let username = "JackOfAllTrades";
+let userCheck = /change/; // Change this line
+let result = userCheck.test(username);
+
+/let userCheck = ^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+
+Code Explanation
+^ - start of input
+[a-z] - first character is a letter
+[a-z]+ - following characters are letters
+\d*$ - input ends with 0 or more digits
+| - or
+^[a-z] - first character is a letter
+\d\d+ - following characters are 2 or more digits
+$ - end of input*/
+
+// let userName1 = "JackOfAllTrades";
+// let userCheck = /^[a-z][a-z]+\d*+|^[a-z]\d\d+$/i;
