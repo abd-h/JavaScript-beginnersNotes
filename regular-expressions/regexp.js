@@ -41,7 +41,7 @@ let result = waldoRegex.test(waldoIsHiding);
 */
 
 let waldoIsHiding = "Somewhere Waldo and Waldo is hiding in this text.";
-let waldoRegex = /Waldo/;
+let waldoRegex = /Waldo/g;
 let waldoResult = waldoRegex.test(waldoIsHiding);
 console.log(waldoResult);
 console.log(waldoIsHiding.match(waldoRegex)
@@ -72,7 +72,7 @@ Case (or sometimes letter case) is the difference between uppercase letters and 
 You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the i flag. You can use it by appending it to the regex. An example of using this flag is /ignorecase/i. This regex can match the strings ignorecase, igNoreCase, and IgnoreCase.
 
 Write a regex fccRegex to match freeCodeCamp, no matter its case. Your regex should not match any abbreviations or variations with spaces.*/
-let fccString = "FreeCodeCamp AKA fcc orFCC ";
+let fccString = "FreeCodeCamp AKA fcC or FCC ";
 let fccRegex = /fcc/i;
 let fccResult = fccRegex.test(fccString);
 console.log(fccResult);
