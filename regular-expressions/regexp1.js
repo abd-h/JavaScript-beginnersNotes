@@ -121,8 +121,12 @@ Also, it is possible to combine a range of letters and numbers in a single chara
 */
 let jennyStr = "Jenny8675309, Jery8675309";
 let jennyRegex = /je[a-z]ny[0-9][0-9][0-9][0-9][0-9][0-9]./gi;
+let nuJennyRegex = /[a-z0-9^ ]+/gi
 let jennyResult = jennyStr.match(jennyRegex);
+let nuJennyResult =jennyStr.match(nuJennyRegex)
 console.log(jennyResult);
+console.log(nuJennyResult);
+
 
 /*Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6. Remember to include the appropriate flags in the regex.
 */
@@ -142,8 +146,11 @@ matches all characters that are not a vowel. Note that characters like ., !, [, 
 */
 let miceStr = "3 blind mice.";
 let miceRegex = /[^0-9a-c ]/gi;
+let mcRegex = /[0-3a-z^ ]+/gi
 let miceResult = miceStr.match(miceRegex);
+let mcResult = miceStr.match(mcRegex);
 console.log(miceResult);
+console.log(mcResult);
 
 /*
 Match Characters that Occur One or More Times
