@@ -96,13 +96,37 @@ Note: Be sure to match both uppercase and lowercase letters.
 
 */
 
-let catStr = "Cat";
+let catStr = "Ciat";
 let batStr = "bat";
 let matStr = "mat";
-let bgRegex = /[A-Z][at]t/g;
+let nuMatStr = "Mat" + 45;
+let bgRegex = /[a-z][a-z][a-z]t|[a-z][a-z]t|[a-z][a-z]t|[0-9][0-9]/gi;
+let nuRegex = /[a-z][a-z]t|[0-9][0-9]/gi
 console.log(catStr.match(bgRegex));
 console.log(batStr.match(bgRegex));
 console.log(matStr.match(bgRegex));
+console.log(nuMatStr.match(nuRegex)); //return  ["Mat, 45"]
 
 let anotherStr = "The quick brown fox jumps over the lazy dog.";
-let qRegex = /[a-z][a-z]/g;
+let qRegex = /[a-z]/gi;
+let anotherResult = anotherStr.match(qRegex)
+console.log(anotherResult);
+
+/*          Match Numbers and Letters of the Alphabet
+Using the hyphen (-) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+
+For example, /[0-5]/ matches any number between 0 and 5, including the 0 and 5.
+
+Also, it is possible to combine a range of letters and numbers in a single character set.
+*/
+let jennyStr = "Jenny8675309";
+let jennyRegex = /je[a-z]ny[0-9][0-9][0-9][0-9][0-9][0-9]./gi;
+let jennyResult = jennyStr.match(jennyRegex);
+console.log(jennyResult);
+
+/*Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6. Remember to include the appropriate flags in the regex.
+*/
+let quoteSampleOff = "Blueberry 3.141592653s are delicious.";
+let quoRegex = /[h-s2-6]/gi;
+let quResult = quoteSampleOff.match(quoRegex);
+console.log(quResult);
