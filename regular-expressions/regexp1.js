@@ -192,7 +192,7 @@ console.log(newPhrase.match(soccerRegex));
 
 */
 let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-let chewieRegex = /[a-z][^0-9]*/gi;
+let chewieRegex = /Aa*/;
 let chewieResult = chewieQuote.match(chewieRegex);
 console.log(chewieResult);
 
