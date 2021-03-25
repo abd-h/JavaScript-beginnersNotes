@@ -191,8 +191,70 @@ console.log(newPhrase.match(soccerRegex));
 /*For this challenge, chewieQuote has been initialized as the string Aaaaaaaaaaaaaaaarrrgh! behind the scenes. Create a regex chewieRegex that uses the * character to match an uppercase A character immediately followed by zero or more lowercase a characters in chewieQuote. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 
 */
-let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-let chewieRegex = /Aa*/;
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrghz!";
+let chewieStr = "He made a fair move. Screaming about it can't help you.";
+let chewieStr1 = "Let him have it. It's not wise to upset a Wookiee.";
+let chewieRegex = /Aa*/g;
 let chewieResult = chewieQuote.match(chewieRegex);
 console.log(chewieResult);
+console.log(chewieStr.match(chewieRegex));
+console.log(chewieStr1.match(chewieRegex));
+
+/*Find Characters with Lazy Matching
+
+In regular expressions, a greedy match finds the longest possible part of a string that fits the regex pattern and returns it as a match. The alternative is called a lazy match, which finds the smallest possible part of the string that satisfies the regex pattern.
+
+You can apply the regex /t[a-z]*i/ to the string "titanic". This regex is basically a pattern that starts with t, ends with i, and has some letters in between.
+
+Regular expressions are by default greedy, so the match would return ["titani"]. It finds the largest sub-string possible to fit the pattern.
+
+However, you can use the ? character to change it to lazy matching. "titanic" matched against the adjusted regex of /t[a-z]*?i/ returns ["ti"].
+
+Note: Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
+
+Fix the regex /<.*>/ to return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>". Remember the wildcard . in a regular expression matches any character.
+
+*/
+let text = "<h1>Winter is Coming</h1>";
+let textRegex = /<.*?>/g;
+console.log(text.match(textRegex));
+
+/*          Find One or More Criminals in a Hunt
+Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+
+Here's an example to review how to do this:*/
+let zStr = "z, zzzz, ABCzzzz, abczzzzzzzzzzz";
+let noZstr = " ABC abcabc";
+let zRegex = /[z]+/g;
+console.log(zStr.match(zRegex));
+/*Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter C.*/
+let cStr = "C";
+let ccStr = "CC";
+let cccStr = "P1P5P4CCCcP2P6P3.";
+let ccccStr = "P6P2P7P4P5CCCCCP3P1";
+let emptyStr = "";
+let p123Str = "P1P2P3";
+let fiftyStr = 
+"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3.";
+let ccRegex = /C+/g;
+let cRegex = /[c]+/gi;
+console.log(cStr.match(cRegex));
+console.log(ccStr.match(cRegex));
+console.log(cccStr.match(ccRegex));
+console.log(ccccStr.match(cRegex));
+console.log(p123Str.match(cRegex));
+console.log(emptyStr.match(cRegex));
+console.log(fiftyStr.match(cRegex).length);
+
+/*Match Beginning String Patterns
+Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+
+In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+*/
+let firstStr ="Ricky is first and can be found";
+let rickyRegex = /^[a-z][a-z]/gi;
+let ricRegex = /^[a-z.]+/gi;
+console.log(firstStr.match(rickyRegex));
+console.log(firstStr.match(ricRegex));
+
 
