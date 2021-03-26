@@ -216,8 +216,11 @@ Fix the regex /<.*>/ to return the HTML tag <h1> and not the text "<h1>Winter is
 
 */
 let text = "<h1>Winter is Coming</h1>";
+let textStr = "Winter is coming";
+let tRegex= /w[a-z].*?n/gi;
 let textRegex = /<.*?>/g;
 console.log(text.match(textRegex));
+console.log(textStr.match(tRegex));
 
 /*          Find One or More Criminals in a Hunt
 Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
@@ -252,9 +255,37 @@ Prior challenges showed that regular expressions can be used to look for a numbe
 In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 */
 let firstStr ="Ricky is first and can be found";
-let rickyRegex = /^[a-z][a-z]/gi;
-let ricRegex = /^[a-z.]+/gi;
+let rickyRegex = /^ricky/gi;
+let ricRegex = /^[a-z]+/ig;
 console.log(firstStr.match(rickyRegex));
 console.log(firstStr.match(ricRegex));
+
+/*Match Ending String PatternsPassed
+In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+
+You can search the end of strings using the dollar sign character $ at the end of the regex.
+
+*/
+let theEnding = "This is never ending story";
+let noEnding = "Sometimes the story has to end"
+let storyRegex = /story$/g;
+console.log(theEnding.match(storyRegex));
+console.log(noEnding.match(storyRegex));
+console.log(storyRegex.test(theEnding));
+console.log(storyRegex.test(noEnding));
+
+/*          Match All Letters and Numbers
+Using character classes, you were able to search for all letters of the alphabet with [a-z]. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
+
+The closest character class in JavaScript to match the alphabet is \w. This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (_).
+*/
+let varNames1 = "important_Var";
+let number1 = 45;
+let longHandRegex = /[a-zA-Z0-9_]+/;
+let shortHandRegex = /[\w+]/g;
+console.log(longHandRegex.test(varNames1));
+console.log(longHandRegex.test(number1));
+console.log(shortHandRegex.test(number1));
+
 
 
