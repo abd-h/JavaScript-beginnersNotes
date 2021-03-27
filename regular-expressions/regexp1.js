@@ -239,24 +239,25 @@ let emptyStr = "";
 let p123Str = "P1P2P3";
 let fiftyStr = 
 "P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3.";
-let ccRegex = /C+/g;
+let ccRegex = /C+/gi;
 let cRegex = /[c]+/gi;
 console.log(cStr.match(cRegex));
 console.log(ccStr.match(cRegex));
+console.log(cccStr.match(cRegex));
 console.log(cccStr.match(ccRegex));
 console.log(ccccStr.match(cRegex));
 console.log(p123Str.match(cRegex));
 console.log(emptyStr.match(cRegex));
 console.log(fiftyStr.match(cRegex).length);
 
-/*Match Beginning String Patterns
+/*      Match Beginning String Patterns
 Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
 
 In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 */
 let firstStr ="Ricky is first and can be found";
 let rickyRegex = /^ricky/gi;
-let ricRegex = /^[a-z]+/ig;
+let ricRegex = /^[\w]+/ig;
 console.log(firstStr.match(rickyRegex));
 console.log(firstStr.match(ricRegex));
 
@@ -286,6 +287,91 @@ let shortHandRegex = /[\w+]/g;
 console.log(longHandRegex.test(varNames1));
 console.log(longHandRegex.test(number1));
 console.log(shortHandRegex.test(number1));
+
+/*Use the shorthand character class \w to count the number of alphanumeric characters in various quotes and strings.*/
+let someStr ="The five boxing wizards jump quickly.";
+let someRegex = /\w+/g;
+let someResult = someStr.match(someRegex).length;
+console.log(someResult);
+
+/**         Match Everything But Letters and Numbers
+ * You've learned that you can use a shortcut to match alphanumerics [A-Za-z0-9_] using \w. A natural pattern you might want to search for is the opposite of alphanumerics.
+
+You can search for the opposite of the \w with \W. Note, the opposite pattern uses a capital letter. This shortcut is the same as [^A-Za-z0-9_].
+ */
+let shortHand1 = /\W/g;
+let sentence = "Coding!";
+let number2 = "42%";
+console.log(sentence.match(shortHand1));// returns !;
+console.log(number2.match(shortHand1));//returns %;
+/**
+ * Use the shorthand character class \W to count the number of non-alphanumeric characters in various quotes and strings.
+
+ */
+let quoteStr = "The five boxing wizards jump quickly.";
+let noNumber = /\W/g; 
+let nonNumLength = quoteStr.match(noNumber).length;
+console.log(nonNumLength);//returns 6
+
+/**         Match All Numbers
+You've learned shortcuts for common string patterns like alphanumerics. Another common pattern is looking for just digits or numbers.
+
+The shortcut to look for digit characters is \d, with a lowercase d. 
+This is equal to the character class [0-9], which looks for a single 
+character of any number between zero and nine.
+
+Use the shorthand character class \d to count how many digits are in movie titles. 
+Written out numbers ("six" instead of 6) do not count.
+
+ */
+let movieName2 = "2001: A Space Odyssey";
+let movieRegex = /\d/g;
+let movieRegex1 = /\d+/g;
+let movieResult1 = movieName2.match(movieRegex)
+let movieResult2 = movieName2.match(movieRegex1)
+let movieResult3 = movieName2.match(movieRegex).length;
+let movieResult4 = movieName2.match(movieRegex1).length;
+console.log(movieResult1);
+console.log(movieResult2);
+console.log(movieResult3);
+console.log(movieResult4);
+
+/**
+ * Match All Non-Numbers
+The last challenge showed how to search for digits using the shortcut \d with a lowercase d. You can also search for non-digits using a similar shortcut that uses an uppercase D instead.
+
+The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+ */
+let movieName3 = "2001: A Space Odyssey";
+let movieRegex2 = /\D/g;
+let movieRegex3 = /\D+/g;
+let movieResult5 = movieName3.match(movieRegex2)
+let movieResult6 = movieName3.match(movieRegex3)
+let movieResult7 = movieName3.match(movieRegex).length;
+let movieResult8 = movieName3.match(movieRegex1).length;
+console.log(movieResult5);
+console.log(movieResult6);
+console.log(movieResult7);
+console.log(movieResult8);
+
+/**Restrict Possible UsernamesPassed
+Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+
+You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+
+1.  Usernames can only use alpha-numeric characters.
+
+2.  The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
+3.  Username letters can be lowercase and uppercase.
+
+4.  Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+ */
+let userName2 = "JackOfAllTrades";
+let userCheck1 = /^[a-z][a-z]+\d*$|[a-z]\d\d+$/i;
+let usernameResult = userName2.match(userCheck1);
+console.log(usernameResult);
 
 
 
