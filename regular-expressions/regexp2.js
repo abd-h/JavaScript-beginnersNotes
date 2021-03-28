@@ -179,3 +179,35 @@ let reRegex = /^(\d+)\s\1\s\1$/g;
 let reResult = reRegex.test(repeatNum);
 console.log(reResult);
 console.log(repeatNum.match(reRegex));
+
+/**         Use Capture Groups to Search and Replace
+Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
+
+You can search and replace text in a string using .replace() on a string. The inputs for .replace() is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+ */
+let wrongText = "The sky is silver";
+let silverRegex = /silver/g;
+console.log(wrongText.replace(silverRegex, "blue"));
+console.log(wrongText.match(silverRegex));
+//The replace call would return the string The sky is blue.
+//You can also access capture groups in the replacement string with dollar signs ($).
+console.log("Code Camp".replace((/(\w+)\s(\w+)/), "$1 $2"));// returns Code Camp
+console.log("Code Camp".replace((/(\w+)\s(\w+)/), "$1 $1"));// returns Code Code
+console.log("Code Camp".replace((/(\w+)\s(\w+)/), "$2 $1"));// returns Camp Code
+
+/**Write a regex fixRegex using three capture groups that will search for each word in the string one two three. Then update the replaceText variable to replace one two three with the string three two one and assign the result to the result variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign ($) syntax.
+*/
+let fixStr = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/g;
+console.log(fixStr.match(fixRegex));
+console.log("one two three".replace((fixRegex), "$3 $2 $1"));
+
+/**         Remove Whitespace from Start and End
+Sometimes whitespace characters around strings are not wanted but are there. Typical processing of strings is to remove the whitespace at the start and end of it.
+
+Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
+
+Note: The String.prototype.trim() method would work here, but you'll need to complete this challenge using regular expressions. */
+let byWhitespace = " Hello World! ";
+let bybyWsRegex = /[^\s]\w+.*[^\s]/g;
+console.log(byWhitespace.match(bybyWsRegex));
