@@ -1,4 +1,4 @@
-/**         Add Key-Value Pairs to JavaScript Objects
+/**      1.   Add Key-Value Pairs to JavaScript Objects
 At their most basic, objects are just collections of key-value pairs. In other words, they are pieces of data (values) mapped to unique identifiers called properties (keys). Take a look at an example:
  */
 const takkenCharacter = {
@@ -19,8 +19,11 @@ console.log(takkenCharacter);
 
  */
 const eyes = "eyes color";
+const division = "Level";
 takkenCharacter[eyes] = "brown";
+takkenCharacter[division] = "MiddleWeight";
 takkenCharacter["hair Color"] = "dyed orange";
+console.log(takkenCharacter);
 /**After adding all the examples, the object will look like this:
  * takkenCharacter = {
     *  player: "Hwoaang",
@@ -30,6 +33,7 @@ takkenCharacter["hair Color"] = "dyed orange";
         "eye color" : brown;
         origin : "South Korea"
  * }
+        
  
   foods object has been created with three entries. Using the syntax of your choice, 
   add three more entries to it: bananas with a value of 13, grapes with a value of 35, 
@@ -59,7 +63,7 @@ foods["strawberries"] = 27
 foods[fruit1] = 13;
 console.log(foods);
 
-/**         Modify an Object Nested Within an Object
+/**         2.      Modify an Object Nested Within an Object
 Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
  */
 let nestedObjects = {
@@ -103,7 +107,7 @@ let userActivity = {
 userActivity.data.online = 45;
 console.log(userActivity.data);
 
-/**         Access Property Names with Bracket Notation
+/**      3.   Access Property Names with Bracket Notation
 In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our foods object is being used in a program for a supermarket cash register. We have some function that sets the selectedFood and we want to check our foods object for the presence of that food. This might look like:
  
 let selectedFood = getCurrentFood(scannedItem);
@@ -127,7 +131,7 @@ let foods = {
 
 function checkInventory(scannedItem) {
   // Only change code below this line
-
+return foods[scannedItem]
   // Only change code above this line
 }
 
@@ -146,7 +150,7 @@ function checkInventory(scannedItem) {
 }
 console.log(checkInventory("apples"));
 
-/**         Use the delete Keyword to Remove Object Properties
+/**       4.  Use the delete Keyword to Remove Object Properties
 Now you know what objects are and their basic features and advantages. In short, they are key-value stores 
 which provide a flexible, intuitive way to structure data, and, they provide very fast lookup time. Throughout 
 the rest of these challenges, we will describe several common operations you can perform on objects so you can 
@@ -189,7 +193,7 @@ delete foods2.plums;
 delete foods2.strawberries;
 console.log(foods2);
 
-/**Check if an Object has a Property
+/**         4.   Check if an Object has a Property
 Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the hasOwnProperty() method and the other uses the in keyword. If we have an object users with a property of Alan, we could check for its presence in either of the following ways:
 useres.hasOwnProperty("Alan") */
 let users = {
@@ -245,14 +249,15 @@ let oldUsers = {
   }
 };
 function isEveryOneHere(obj) {
-    return ["Alan", "Jeff", "Sarah", "Ryan"].every(name => 
-        obj.hasOwnProperty(name)
-    );
+    // return ["Alan", "Jeff", "Sarah", "Ryan"].every(name => 
+    //     obj.hasOwnProperty(name)
+    // );
+   return "Alan", "Jeff", "Sarah", "Ryan" in oldUsers === true;
 }
 
 console.log(isEveryOneHere(oldUsers));
 
-/**         Iterate Through the Keys of an Object with a for...in Statement
+/**        5.  Iterate Through the Keys of an Object with a for...in Statement
 Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a for...in statement. For our oldUsers object, this could look like:
 */
 for (let user in oldUsers) {
@@ -267,8 +272,6 @@ NOTE: Objects do not maintain an ordering to stored keys like arrays do; thus a 
 We've defined a function countOnline which accepts one argument (a users object). Use a for...in statement within this function to loop through the users object passed into the function and return the number of users whose online property is set to true. An example of a users object which could be passed to countOnline is shown below. Each user will have an online property with either a true or false value.
 */
 
-
-function someUsers(otherObj) {
     let otherUsers = {
     Alan: {
     age: 27,
@@ -287,14 +290,76 @@ function someUsers(otherObj) {
     online: true
   }
 };
+
+function someUsers(otherObj) {
+
     let result = 0;
     for (let users in otherObj){
         if(otherObj[users].online === true) {
-         
+         result.push(users);
             result++;
         }
     }
     return result[otherUsers]
     
 }
-console.log(someUsers("Sarah"));
+console.log(someUsers("otherUsers"));
+
+/**         Modify an Array Stored in an Object
+Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the Data Structures lessons located in the Coding Interview Prep section of the curriculum also cover the ES6 Map and Set objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript! 
+
+Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains five keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends and returns that array.
+
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // Only change code below this line
+user.data.friends.push(friend);
+return user.data.friends;
+  // Only change code above this line
+}
+
+console.log(addFriend(user, 'Pete'));*/
+let allUsers = {
+    name: "Kennneth",
+    age: 28,
+    data: {
+        username: "KennethCodesAll Day",
+        joinDate: "March 26 2016",
+        organisation: "FeeCodeCamp",
+        friends: [
+            "Sam",
+            "Kira",
+            "Tomo"
+        ],
+        location: {
+            city: "San Frencisco",
+            state: "California",
+            country: "USA"
+        }
+    }
+};
+function addFriend(userObj, friend) {
+    allUsers.data.friends.push(friend);
+    return allUsers.data.friends;
+
+}
+console.log(addFriend(allUsers, 'Pete'));
