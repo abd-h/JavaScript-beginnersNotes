@@ -4,7 +4,7 @@ Data can be stored and accessed in many ways. You already know some common JavaS
 In this Basic Data Structures course, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like splice() and Object.keys() to access and manipulate data.     
 
  * 
- *                  Use an Array to Store a Collection of Data
+ *                1.  Use an Array to Store a Collection of Data
 The below is an example of the simplest implementation of an array data structure. This is known as a one-dimensional array, meaning it only has one level, or that it does not have any other arrays nested within it. Notice it contains booleans, strings, and numbers, among other valid JavaScript data types: */
 let simpleArray = ["one", 2, "Three", true, false, undefined, null];
 console.log(simpleArray.length);
@@ -38,13 +38,13 @@ let complexArray = [
  */
 let yourArray = ["one", 1, true, {hello: "world!"}, undefined, null];
 
-/**         Access an Array's Contents Using Bracket Notation
+/**         2.  Access an Array's Contents Using Bracket Notation
 The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information. 
 When we define a simple array as seen below, there are 3 items in it:*/
 
 let ourArray = ["a", "b", "c"];
 
-/**In an array, each array item has an index. This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are zero-indexed, meaning that the first element of an array is actually at the zeroth position, not the first. In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as bracket notation. For example, if we want to retrieve the a from ourArray and assign it to a variable, we can do so with the following code: */
+/**In an array, each array item has an index. This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are zero-indexed, meaning that the first element of an array is actually at the zeroth position, not the first. In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as bracket notation. For example, if we want to retrieve the "a" from ourArray and assign it to a variable, we can do so with the following code: */
 
 let ourVariable = ourArray[0];
 console.log(ourVariable);
@@ -54,7 +54,8 @@ console.log(ourVariable);
 In addition to accessing the value associated with an index, you can also set an index to a value using the same notation:*/
 ourArray[1] = "not b anymore";
 
-/**Using bracket notation, we have now reset the item at index 1 from the string b, to not b anymore. Now ourArray is ["a", "not b anymore", "c"].
+/**Using bracket notation, we have now reset the item at index 1 from the string b, to not b anymore. 
+ * Now ourArray is ["a", "not b anymore", "c"].
 
 In order to complete this challenge, set the 2nd position (index 1) of myArray to anything you want, besides the letter b.
 
@@ -63,10 +64,10 @@ let myArray = ["a", "b", "c", "d"];
 
 // Only change code above this line
 console.log(myArray);*/
-let myArray = ["a", "b", "c", "d" ];
+let myArray = ["a", "b", "c", "d"];
 myArray[1] = "Its capital B for now";
 
-/**         Add Items to an Array with push() and unshift()
+/**         3.   Add Items to an Array with push() and unshift()
 An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are mutable. In this challenge, we will look at two methods with which we can programmatically modify an array: Array.push() and Array.unshift().
 
 Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the push() method adds elements to the end of an array, and unshift() adds elements to the beginning. Consider the following: */
@@ -97,9 +98,9 @@ function mixedNumbers(arr) {
     arr.unshift("I", 2, "three");
     return arr;
 }
-console.log(mixedNumbers(['IV', 5, 'six']));
+console.log(mixedNumbers(['IV', 5, 'six']));//returns ["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]
 
-/**Remove Items from an Array with pop() and shift()
+/**         4. Remove Items from an Array with pop() and shift()
 Both push() and unshift() have corresponding methods that are nearly functional opposites: pop() and shift(). As you may have guessed by now, instead of adding, pop() removes an element from the end of an array, while shift() removes an element from the beginning. The key difference between pop() and shift() and their cousins push() and unshift(), is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
 
 Let's take a look: */
@@ -135,9 +136,9 @@ function popShift(arr) {
     let shifted = arr.shift();
     return [shifted, popped];
 }
-console.log(popShift(["challenge","is", "not", "complete"]));
+console.log(popShift(["challenge","is", "not", "complete"]));//returns ["challenge", "complete"]
 
-/**         Remove Items Using splice()
+/**         5.  Remove Items Using splice()
 Ok, so we've learned how to remove elements from the beginning and end of arrays using shift() and pop(), but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where splice() comes in. splice() allows us to do just that: remove any number of consecutive elements from anywhere in an array.
 
 splice() can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of splice() are integers which represent indexes, or positions, of the array that splice() is being called upon. And remember, arrays are zero-indexed, so to indicate the first element of an array, we would use 0. splice()'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example: */
@@ -167,10 +168,10 @@ console.log(arr);
 const arr = [2, 4, 5, 1, 7, 5, 2, 1];
 console.log(arr);
 //arr.splice((0,1),(4,4)); // or
-arr.splice(0,1) - arr.splice(3,4);
-console.log(arr);
+arr.splice(0,1),arr.splice(3,4);
+console.log(arr); [4, 5, 1]
 
-/**         Add Items Using splice()
+/**         6.  Add Items Using splice()
 Remember in the last challenge we mentioned that splice() can take up to three parameters? Well, you can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
  */
 const numbers = [10, 11, 12, 12, 15];
@@ -187,7 +188,7 @@ We have defined a function, htmlColorNames, which takes an array of HTML colors 
 
 function htmlColorNames(arr) {
   // Only change code below this line
-
+    
   // Only change code above this line
   return arr;
 }
@@ -201,7 +202,7 @@ console.log(htmlColorNames([
     'DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick'
 ])); 
 /**
- *           Copy Array Items Using slice()
+ *          7.  Copy Array Items Using slice()
 The next method we will cover is slice(). Rather than modifying an array, slice() copies or extracts a given number of elements to a new array, leaving the array it is called upon untouched. slice() takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
  */
 let weatherConditions = ["rain", "snow", "sleet", "hail", "clear"];
@@ -230,13 +231,13 @@ function forecast(arr) {
 }
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 
-/**         Copy an Array with the Spread Operator
+/**        8.   Copy an Array with the Spread Operator
 While slice() allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new spread operator allows us to easily copy all of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: ...
 
 In practice, we can use the spread operator to copy an array like so: */       
 let newArray1 = [true, true, undefined, false, null]   
 let thatArray = [...newArray1]
-console.log(thatArray);
+console.log(thatArray);//returns [true, true, undefined, false, null]
 
 /**We have defined a function, copyMachine which takes arr (an array) and num (a number) as arguments. The function is supposed to return a new array made up of num copies of arr. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!). 
  * 
@@ -244,7 +245,7 @@ console.log(thatArray);
   let newArr = [];
   while (num >= 1) {
     // Only change code below this line
-
+newArr.push([...arr])
     // Only change code above this line
     num--;
   }
@@ -263,7 +264,7 @@ function copyMachine(arr, num) {
 }
 console.log(copyMachine([true, false, true], 2));
 
-/**         Combine Arrays with the Spread Operator
+/**         9.  Combine Arrays with the Spread Operator
 Another huge advantage of the spread operator is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple: */
 let thisArray = ["sage", "rosemary", "parsley", "thyme"];
 console.log(thisArray);
@@ -289,7 +290,7 @@ function spreadOut() {
 }
 console.log(spreadOut());
 
-/**Check For The Presence of an Element With indexOf()
+/**             10. Check For The Presence of an Element With indexOf()
 Since arrays can be changed, or mutated, at any time, there's no guarantee about where a particular piece of 
 data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with 
 another built-in method, indexOf(), that allows us to quickly and easily check for the presence of an element 
@@ -321,10 +322,13 @@ function quickCheck(arr, elem) {
     else {
         return false;
     }
+    //either works.
+    // let arr1 = arr.indexOf(elem) >=0; 
+    // return arr1;
 }
 console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 
-/**         Iterate Through All an Array's Items Using For Loops
+/**       11.  Iterate Through All an Array's Items Using For Loops
 Sometimes when working with arrays, it is very handy to be able
  to iterate through each item to find one or more elements that we might need, or to manipulate an array based 
  on which data items meet a certain set of criteria. JavaScript offers several built in methods that each 
@@ -362,14 +366,15 @@ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));*
 function filteredArray(arr, elem) {
     let newArr2 = [];
     for (let i =0; i < arr.length; i++) {
-        if (arr[i].indexOf(elem) == -1) {
+        if (arr[i].indexOf(elem) === -1) {
              newArr2.push(arr[i]);
+             
         }
     }
-    return newArr2;
+   return newArr2;
 }
 console.log(
-    filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)
+filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)
 );
 
 /**         Create complex multi-dimensional arrays
