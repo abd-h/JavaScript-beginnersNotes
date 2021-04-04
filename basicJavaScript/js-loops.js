@@ -1,6 +1,6 @@
 /*           Iterate with JavaScript While Loops
 You can run the same code multiple times by using a loop
-The firs type of loop i will be learning is called while loop because it runs while specified condition is true and stops once that condition is not longer true.*/ 
+The firs type of loop you will be learning is called while loop because it runs while specified condition is true and stops once that condition is not longer true.*/ 
 var ourArray = [];
 var i = 0;
 while (i  < 5) {
@@ -8,7 +8,16 @@ while (i  < 5) {
      i++;
 }
 console.log(ourArray);
-
+function downFromTen(num){
+    let firstLoop = [];
+    let ii = 0;
+    while (ii < num) {
+        firstLoop.unshift(ii);
+        ii++;
+    }
+    return firstLoop;
+}
+console.log(downFromTen(10));
 /*in the example code obove the while loop will execute 5 times 
 and apend the numbers 0 through 4 to ourArray.*/  
 
@@ -28,7 +37,7 @@ console.log(myArray);
 You can run the same code multiple times by using a loop.
 The most common type of JavaScript loops is called a for loop 
 because it runs for  a specific number of times .
-For loos  are declared with three optionalexpressions seperated with a semicolons:
+For loops  are declared with three optionalexpressions seperated with a semicolons:
 
 for  (a; b; c),  where a is the  initialization statement, 
 b is the condition statement, and  c is the final expression.
@@ -54,6 +63,7 @@ for (i = 0; i < 5; i++) {
     forLoopArray.unshift(i);
 }
 console.log(forLoopArray);
+
 /*          Iterate Odd Numbers With a For Loop
 For loops don't have to iterate one at a time. 
 By changing our final-expression, we can count by even numbers.
@@ -82,14 +92,28 @@ console.log(countBackwards);
  One way to do that is with a for loop. 
  This code will output each element of the array arr to the console:
  */
-var arr = [15, 12, 9, 6, 3, 0];
-for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i])
+var arr = [15, 12, 9, 6, 3, 1000];
+let arR =[];
+let remove1 = 5;
+let add1 = 16
+
+ 
+   function morethanTen(arr) {
+       for (let i = 0; i < arr.length; i++)
+        if(arr[i] > 9){
+           
+      arR.push(arr[i]);
+    }
+    
+     return arR;
 }
+
+console.log(arR);
+console.log(morethanTen([15, 12, 9, 6, 3, 1000,24]));
 /*Remember that arrays have zero-based indexing, 
 which means the last index of the array is length - 1. 
  Our condition for this loop is i < arr.length, which stops the loop when i is equal to length. 
- In this case the last iteration is i === 5 i.e. 
+ In this case the last iteration is i === 24 i.e. 
  when i becomes equal to arr.length and outputs 0 to the console.
 
  Below is an example I declared and initialize a variable total to 0. 
@@ -102,6 +126,20 @@ which means the last index of the array is length - 1.
      total += myNewArr[i];
  }
  console.log(total);
+ function reverseStr1(str) {
+     let result = [];
+      
+    
+     for (let i = 0; i <str.length; i++) {
+       let result1 = str[i];
+       let result3 = [];
+       result3 += result1;
+       console.log(result3);
+       result.push(result3)
+     }
+     return result;
+ }
+ console.log(reverseStr1("Hello"));
 
 
 /*          Nesting For Loops
@@ -114,9 +152,10 @@ var nestedTotal = 0;
 for (var i =0; i < nestedArr.length; i++) {
     for (var j = 0; j < nestedArr[i].length; j++){
         console.log(nestedArr[i][j]);
-        // nestedTotal += nestedArr[i][j];
+        nestedTotal += nestedArr[i][j];
     }
 }
+console.log(nestedTotal);
     
     /*This outputs each sub-element in arr one at a time. 
 Note that for the inner loop, we are checking the .length of arr[i], 
@@ -127,10 +166,13 @@ function multiplAll(arr) {
     for (var i = 0; i < arr.length; i++) {
         for (var j =0; j < arr[i].length; j++){
             product *= arr[i][j];
+
         }
+        
     }
-    return product
+     return product   
 }
+console.log(multiplAll([[23, 2],[2, 6]]));
 /**
             Iterare While Do Loop
 The next type of loop is called do...while loop because it will first do one pass
@@ -148,20 +190,31 @@ do {
 
 var whileArray = [];
 var i = 5;
-while (i < 5){
+while (i <=5){
     whileArray.push[i];
     i++;
 }
+console.log(i);
+function someStr(str) {
+     let someS = [];
+     let id = 0;
+     while (id < str.length) {
+         someS.unshift(str[id]);
+         id++
+     }
+     return someS;
+ }
+console.log(someStr("Hello"));
+
 
 var testDoWhile = [];
-var i = 5;
-do {
-    testDoWhile.push([i]);
-    i++;
-} while(i < 5);
-console.log(testDoWhile);
-
-
+// var i = 6;
+// do {
+//     testDoWhile.push([i]);
+//     i--;
+// } while(i < 12);
+// console.log(i);
+ 
 /*In the example above, we initialize the value of ourArray to an empty array and the value of i to 5. 
 When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
  */
