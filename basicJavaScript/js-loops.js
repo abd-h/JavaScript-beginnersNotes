@@ -207,13 +207,14 @@ function someStr(str) {
 console.log(someStr("Hello"));
 
 
-var testDoWhile = [];
-// var i = 6;
+// var testDoWhile = [];
+// var iii = 6;
 // do {
-//     testDoWhile.push([i]);
-//     i--;
+//     testDoWhile.push([iii]);
+//     iii++;
 // } while(i < 12);
-// console.log(i);
+// console.log(iii);
+// console.log(testDoWhile);
  
 /*In the example above, we initialize the value of ourArray to an empty array and the value of i to 5. 
 When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:

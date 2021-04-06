@@ -132,3 +132,89 @@ function largestOfFour(arr) {
     return biggestNumber;
 }
 console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1], [0, -1, -12, -14]]));
+
+/**     Confirm the Ending
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead. 
+
+function confirmEnding(str, target) {
+  return str;
+}
+
+confirmEnding("Bastian", "n");
+
+explanation is source from:
+https://www.freecodecamp.org/news/two-ways-to-confirm-the-ending-of-a-string-in-javascript-62b4677034ac/*/
+
+function confirmEndOf(str, target) {
+  if(str.slice(-target.length) === target){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(confirmEndOf("Congratulation", "on"));
+function confirmEnding(str, target) {
+  let str1 = str[str.length-1];
+  if (str1 === target) {
+    return true
+  }
+  else {
+    return false;
+  }
+}
+let n = "m";
+console.log(n.indexOf(-1));
+console.log(confirmEnding("Congratulation", "on"));
+
+// using endsOf();
+function confirmEndingOf(str, target) {
+  return str.endsWith(target);
+}
+console.log(confirmEndingOf("Bastian", "n"));
+
+/**     Repeat a String Repeat a String
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method. 
+
+function repeatStringNumTimes(str, num) {
+  return str;
+}
+
+repeatStringNumTimes("abc", 3);*/
+
+function repeatStringNumTimes(str, num) {
+  if (num < 1) {
+    return "";
+  }
+  return str += repeatStringNumTimes(str, num -1)
+}
+console.log(repeatStringNumTimes("abc", 3));
+
+/**     Truncate a String
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending. 
+
+function truncateString(str, num) {
+  return str;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);*/
+ let truncate = "A-tisket a-tasket A green and yellow basket";
+ let strlen = 8;
+ totalStr = truncate.substr(0,strlen).concat("...");
+ console.log(totalStr);
+
+ function truncateString(str, num){
+  
+   if (str.length > num) {
+     return str.substr(0, num).concat("...");
+   } else {
+     return str;
+   }
+   
+ }
+ console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2));
+
+
+
