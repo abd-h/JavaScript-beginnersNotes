@@ -216,5 +216,70 @@ truncateString("A-tisket a-tasket A green and yellow basket", 8);*/
  }
  console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2));
 
+ /**      Finders Keepers
+Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 
+function findElement(arr, func) {
+  let num = 0;
+  return num;
+}
+
+here:
+arr =[1,2,3,4]
+and 
+func(num) {return num% 2===0}
+so the function is same as 
+findElement(arr=[1,2,3,4], func(num){return num%2===0;})
+
+The first is an array: [1, 2, 3, 4]
+The second is a function: function(num){ return num % 2 === 0; }
+What you need to do is return the item in the array that first makes the second argument return true. The second argument returns true or false as shown in the example below.
+In other words, return the first item in the array that can be perfectly divided by 2 with no remainder.
+Example:
+Item 1 in the array is the number 1
+So we replace the functions argument (num) with 1
+function(1){ return 1 % 2 === 0; }
+So does 1 ÷ 2 = 0 and therefore leaves no remainder?
+No 1 ÷ 2 = 0.5
+So our first argument is not true. And this function will return a true or false statement.
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);*/
+function findElement(arr, func) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if(func(arr[i]) === true) {
+      num = arr[i];
+     
+    }
+    else if (func() === 0){
+      return undefined;
+    }
+  }
+  return num;
+}
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+/**Boo who
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+
+function booWho(bool) {
+  return bool;
+}
+
+; */
+
+function booWho(bool) {
+  if (bool=== true || bool === false) {
+    return true;
+  }
+  else {
+    return false
+  }
+
+}
+console.log(booWho(false));
+// console.log(Boolean);
+ 
 
