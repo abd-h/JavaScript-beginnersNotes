@@ -297,9 +297,31 @@ titleCase("I'm a little tea pot")*/
 function titleCase(str) {
    str = str.toLowerCase().split(" ");
   
-  
   for (let i = 0; i < str.length; i++){
    str[i] = str[i].charAt("0").toUpperCase() + str[i].slice(1);
+
+   /* Here str.length = 5
+    1st iteration: str[0] = str[0].charAt(0).toUpperCase() + str[0].slice(1);
+                   str[0] = "i'm".charAt(0).toUpperCase()  + "i'm".slice(1);
+                   str[0] = "I"                            + "'m";
+                   str[0] = "I'm";
+    2nd iteration: str[1] = str[1].charAt(0).toUpperCase() + str[1].slice(1);
+                   str[1] = "a".charAt(0).toUpperCase()    + "a".slice(1);
+                   str[1] = "A"                            + "";
+                   str[1] = "A";
+    3rd iteration: str[2] = str[2].charAt(0).toUpperCase()   + str[2].slice(1);
+                   str[2] = "little".charAt(0).toUpperCase() + "little".slice(1);
+                   str[2] = "L"                              + "ittle";
+                   str[2] = "Little";
+    4th iteration: str[3] = str[3].charAt(0).toUpperCase() + str[3].slice(1);
+                   str[3] = "tea".charAt(0).toUpperCase()  + "tea".slice(1);
+                   str[3] = "T"                            + "ea";
+                   str[3] = "Tea";
+    5th iteration: str[4] = str[4].charAt(0).toUpperCase() + str[4].slice(1);
+                   str[4] = "pot".charAt(0).toUpperCase() + "pot".slice(1);
+                   str[4] = "P"                           + "ot";
+                   str[4] = "Pot";                                                         
+    End of the FOR Loop*/
   
    
   }
@@ -307,6 +329,53 @@ function titleCase(str) {
   
 }
 console.log(titleCase("I'm a little tea pot"));
-
+  
 let cs = "imnewher";
-console.log(cs.slice(2) + cs.slice(1));
+console.log(cs.charAt("0").toUpperCase() + cs.slice(1));
+
+function littlecase(str) {
+  str = str.toLowerCase().split(' ');
+  for (let i = 0; i < str.length; i++){
+    str[i] = str[i].charAt("0").toUpperCase() + str[i].slice(1);
+  
+  }
+  return str.join(" ");
+}
+console.log(littlecase("this is the new normal2020"));
+
+/**     Slice and Splice
+You are given two arrays and an index.
+
+Copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index n of the second array.
+
+Return the resulting array. The input arrays should remain the same after the function runs.
+
+function frankenSplice(arr1, arr2, n) {
+  return arr2;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1); */
+
+let aar = [1,2,3];
+let aar1 = [4,5,6];
+let n1  = aar.slice(0,)
+let n2 = aar1.slice(0, ...aar1, aar,)
+console.log(n1,n2);
+let n3 = n1 || n2;
+n3
+console.log(n3);
+
+function frankenSplice(arr1,arr2, n) {
+  let i = 0;
+  let n2 = arr2.slice(0, 1);
+  do {
+    arr2.push(arr1[i])
+   n +=(arr2)
+   n2.push(arr2, arr1)
+   i++
+  } while (i < arr1.length);
+  return n2;
+}
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
