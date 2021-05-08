@@ -1,8 +1,10 @@
 /*            Build JavaScript Objects
 You may have heard the term object before.
 
-Object  are similar to arrays, except that instead of using index to access their data, you access the data in object through what are called properties.
-Objects are usefull for storing data in a structured way, and can represent real world objects, like cat.
+Object  are similar to arrays, except that instead of using index to access their data,
+you access the data in object through what are called properties.
+Objects are usefull for storing data in a structured way, 
+and can represent real world objects, like cat.
 
 Example
  */
@@ -13,7 +15,10 @@ var cat = {
     "tail":1,
     "enemies": ["Water", "Dogs"]
 };
-// In this example, all the properties are stored as strings, such as - "name", "legs", and "tails". However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
+// In this example, all the properties are stored as strings, 
+such as - "name", "legs", and "tails". However, you can also use 
+numbers as properties. You can even omit the quotes for 
+single-word string properties, as follows:
 
 var anotherObject = {
     make: "Ford",
@@ -21,7 +26,8 @@ var anotherObject = {
     "Model": "Mondeo"
 };
 console.log(typeof anotherObject.make); // returns string
-/*However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.*/
+/*However, if your object has any non-string properties, 
+JavaScript will automatically typecast them as strings.*/
 
 var newLocal = {
     "name": "Yorshire Terrier",
@@ -37,9 +43,11 @@ console.log(myDog);
 There are two ways to access the properties of an object: 
 dot notation (.) and bracket notation ([]), similar to an array.
 
-Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+Dot notation is what you use when you know the name of the 
+property you're trying to access ahead of time.
 
-Here is a sample of using dot notation (.) to read an object's property:*/ 
+Here is a sample of using dot notation (.) to read an object's 
+property:*/ 
 
 var myObject = {
     prop1: "val1",
@@ -62,7 +70,10 @@ console.log(shirtValue);
 
 // Accessing Object Properties with Bracket Notation
 
-// The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+// The second way to access the properties of an object is bracket 
+notation ([]). If the property of the object you are trying to 
+access has a space in its name, you will need to use bracket 
+notation.
 
 // Example
 
