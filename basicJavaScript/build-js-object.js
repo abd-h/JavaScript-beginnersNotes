@@ -1,8 +1,11 @@
 /*            Build JavaScript Objects
+
 You may have heard the term object before.
 
-Object  are similar to arrays, except that instead of using index to access their data,
-you access the data in object through what are called properties.
+Object  are similar to arrays, except that instead of using index 
+to access their data,you access the data in object through 
+what are called properties.
+
 Objects are usefull for storing data in a structured way, 
 and can represent real world objects, like cat.
 
@@ -99,7 +102,10 @@ console.log(entreeValue, drinkValue);
 
             /* Accessing Objects with Properties with Veriables
  
-Another  use of bracket notation on objects is access a property which is stored as value of veriable. This can be very useful for iterating through an object's properties or when accessing look up table.
+Another  use of bracket notation on objects is access a property 
+which is stored as value of veriable. This can be very useful 
+for iterating through an object's properties or when accessing 
+look up table.
 
      Eample 1 */
 
@@ -113,7 +119,10 @@ var myBreed = dogs[myDog1];
 console.log(myBreed); // "Doberman";
 
 // Example 2
-/*Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows: */
+/*Another way you can use this concept is when the property's name 
+is collected dynamically during the program execution, 
+as follows: */
+
 var someObj = {
     propName: "John"
 };
@@ -125,7 +134,9 @@ console.log(propPrefix("Name"));
 var someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 
-// Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name.
+// Note that we do not use quotes around the variable name 
+when using it to access the property because we are using 
+the value of the variable, not the name.
 
 var testObj = {
     12: "Namath",
@@ -137,7 +148,9 @@ var player = testObj[playerNumber];
 console.log(player); // Montana
 
 /*          Updating Object Properties
-After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+After you've created a JavaScript object, you can update its 
+properties at any time just like you would update any other 
+variable. You can use either dot or bracket notation to update.
 
 // For example, let's look at ourDog: */
 
@@ -148,7 +161,14 @@ var ourDog = {
     "friends":  ["everything"]
 };
 
-// Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper".
+// Since he's a particularly happy dog, let's change his name to 
+"Happy Camper". Here's how we update his object's name 
+property: 
+
+ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; 
+
+Now when we evaluate ourDog.name, instead of getting "Camper", 
+we'll get his new name, "Happy Camper".
 
 // Adding New properties to ourDog object:
 
@@ -186,7 +206,11 @@ console.log(ourDog);// deletes diet properties;
 
 // Using Objects for Lookups
 
-// Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+// Objects can be thought of as a key/value storage, 
+like a dictionary. If you have tabular data, you can use 
+an object to "lookup" values rather than a switch statement 
+or an if/else chain. This is most useful when you know that 
+your input data is limited to a certain range.
 
 // Here is an example of a simple reverse alphabet lookup:
 
