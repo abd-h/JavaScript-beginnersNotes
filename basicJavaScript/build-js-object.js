@@ -148,6 +148,7 @@ var player = testObj[playerNumber];
 console.log(player); // Montana
 
 /*          Updating Object Properties
+
 After you've created a JavaScript object, you can update its 
 properties at any time just like you would update any other 
 variable. You can use either dot or bracket notation to update.
@@ -249,7 +250,10 @@ var result4 = phonaticLookup("bravo");
 console.log(result4);
 
 /*          Testing Objects for Properties
-Sometimes its useful to check if the property of given object exist or not. We can use the .hasOwnProperty(propname) method of objects to determine if  that object has given property name. 
+
+Sometimes its useful to check if the property of given object exist 
+or not. We can use the .hasOwnProperty(propname) method of objects 
+to determine if that object has given property name. 
 
      .hasOwnProperty() returns true or false if the property is found or not.
 
@@ -271,7 +275,10 @@ function checkObj(obj, checkProp) {
 
 /*          Manipulating Complex Objects
 
-Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+Sometimes you may want to store data in a flexible Data Structure. 
+A JavaScript object is one way to handle flexible data. They allow 
+for arbitrary combinations of strings, numbers, booleans, arrays, 
+functions, and objects.
 
 // Here's an example of a complex data structure:*/ 
 
@@ -301,7 +308,9 @@ ourMusic.myMusic = {
 console.log(ourMusic);
 
 /* Accessing Nested Objects
-The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+The sub-properties of objects can be accessed by chaining together 
+the dot or bracket notation.
 
 // Here is a nested object:*/
 var ourStorage = {
