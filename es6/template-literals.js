@@ -1,7 +1,11 @@
 /*          Create Strings using Template Literals
-A new feature of ES6 is the template literal. This is a special type of string that makes creating complex strings easier.
 
-Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+A new feature of ES6 is the template literal. 
+This is a special type of string that makes creating complex 
+strings easier.
+
+Template literals allow you to create multi-line strings 
+and to use string interpolation features to create strings.
 
 Consider the code below:*/
 const person = {
@@ -9,16 +13,36 @@ const person = {
     age: 56
 };
 
-const greetings = `Hello, my name is ${person.name}! and I am ${person.age} years old.`;
+const greetings = `Hello, my name is ${person.name}! 
+                   and I am ${person.age} years old.`;
 console.log(greetings);
 
-/*The console will display the strings Hello, my name is Zodiac Hasbro! and I am 56 years old..
+/*The console will display the strings Hello, 
+my name is Zodiac Hasbro! and I am 56 years old..
 
-A lot of things happened there. Firstly, the example uses backticks (`), not quotes (' or "), to wrap the string. Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting \n within strings. The ${variable} syntax used above is a placeholder. Basically, you won't have to use concatenation with the + operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with ${ and }. Similarly, you can include other expressions in your string literal, for example ${a + b}. This new way of creating strings gives you more flexibility to create robust strings.
+A lot of things happened there. Firstly, 
+the example uses backticks (`), not quotes (' or "), 
+to wrap the string. Secondly, notice that the string is multi-line,
+both in the code and the output. This saves inserting \n within strings. 
 
-Use template literal syntax with backticks to create an array of list element (li) strings. Each list element's text should be one of the array elements from the failure property on the result object and have a class attribute with the value text-warning. The makeList function should return the array of list item strings.
+The ${variable} syntax used above is a placeholder. 
+Basically, you won't have to use concatenation with the + operator anymore. 
+To add variables to strings, you just drop the variable in a 
+template string and wrap it with ${ and }. 
 
-Use an iterator method (any kind of loop) to get the desired output (shown below).
+Similarly, you can include other expressions in your string literal, 
+for example ${a + b}. This new way of creating strings gives 
+you more flexibility to create robust strings.
+
+Use template literal syntax with backticks to create 
+an array of list element (li) strings. 
+Each list element's text should be one of the array elements 
+from the failure property on the result object and have a 
+class attribute with the value text-warning. 
+The makeList function should return the array of list item strings.
+
+Use an iterator method (any kind of loop) to get the desired 
+output (shown below).
 
 [
   '<li class="text-warning">no-var</li>',
@@ -58,7 +82,9 @@ function makeList(arr) {
 const failuresList = makeList(result.failure)
 console.log(failuresList);
 
-/*      Write Concise Object Literal Declarations Using Object Property Shorthand
+/*      Write Concise Object Literal Declarations 
+        Using Object Property Shorthand
+
 ES6 adds some nice support for easily defining object literals.
 
 Consider the following code:
@@ -71,7 +97,10 @@ getMousePosition is a simple function that returns an object containing two prop
 const getMousePosition = (x, y) => ({x, y});
 console.log(getMousePosition("twenty third", "No 10"));
 
-/*Use object property shorthand with object literals to create and return an object with name, age and gender properties.
+/* Use object property shorthand with object 
+literals to create and return an object with name, 
+age and gender properties.
+
 const createPerson = (name, age, gender) => {
   // Only change code below this line
   return {
@@ -85,6 +114,7 @@ const createPerson = (name, age, gender) => ({name, age, gender});
 console.log(createPerson("James Bond",  34, "Male") );
 
 /*          Write Concise Declarative Functions with ES6
+
 When defining functions within objects in ES5, 
 we have to use the keyword function as follows:*/
 const person1 = {
@@ -96,7 +126,9 @@ const person1 = {
 const greeter =person1.sayHello();
 console.log(greeter);
 
-/*With ES6, you can remove the function keyword and colon altogether when defining functions in objects. Here's an example of this syntax:*/
+/*With ES6, you can remove the function keyword and colon 
+altogether when defining functions in objects. 
+Here's an example of this syntax:*/
  
 const person2 = {
     name: "Nicholas Anelka",
@@ -106,7 +138,7 @@ const person2 = {
     }  
 };
 
-/*Refactor the function setGear inside the object bicycle 
+/* Refactor the function setGear inside the object bicycle 
 to use the shorthand syntax described above.
 // Only change code below this line
 const bicycle = {

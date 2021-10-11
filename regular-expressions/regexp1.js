@@ -1,7 +1,10 @@
 /*          Extract Matches
-So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the .match() method.
+So far, you have only been checking if a pattern exists or not within a string. 
+You can also extract the actual matches you found with the .match()
+method.
 
-To use the .match() method, apply the method on a string and pass in the regex inside the parentheses.
+To use the .match() method, apply the method on a string and pass 
+in the regex inside the parentheses.
 
 Here's an example:*/
 console.log("Hello World".match(/Hello/g));
@@ -11,7 +14,7 @@ let regResult = regStr.match(regregex);
 console.log(regResult);
 /*Here the first match would return ["Hello"] and the second would return ["expressions"].
 
-Note that the .match syntax is the "opposite" of the .test method you have been using thus far:*/
+Note that the .match syntax is the "opposite" of the .test method you have been musing thus far:*/
 'string'.match(/regex/g);
 /regex/.test('string');
 /*Apply the .match() method to extract the string coding.
@@ -26,7 +29,8 @@ console.log(codingResult);
 
 
 
-/*          Find More Than the First MatchPassed
+/*          Find More Than the First Match
+
 So far, you have only been able to extract or search a pattern once.
 */
 let repStr = "Repeat, Repeat, Repeat";
@@ -37,6 +41,8 @@ let rep2Regex = /Repeat/g;
 let repResult1 = repStr.match(rep1Regex);
 let repResult2 = repStr.match(rep2Regex);
 console.log(repResult1, repResult2);
+
+
 /*Using the regex starRegex, find and extract both Twinkle words from the string twinkleStar.
 Note
 You can have multiple flags on your regex like /search/gi*/
@@ -46,17 +52,29 @@ let twinkleResult = twinkleStar.match(twinkleRegex);
 console.log(twinkleResult);
 
 /*          Match Anything with Wildcard Period
-Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: .
 
-The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match hug, huh, hut, and hum, you can use the regex /hu./ to match all four words.
+Sometimes you won't (or don't need to) know the exact characters 
+in your patterns. Thinking of all words that match, say, 
+a misspelling would take a long time. Luckily, you can save time 
+using the wildcard character: .
+
+The wildcard character . will match any one character. 
+The wildcard is also called dot and period. 
+You can use the wildcard character just like any other 
+character in the regex. For example, if you wanted to match hug, 
+huh, hut, and hum, you can use the regex /hu./ to match all four 
+words.
 */
 let humStr = "I'll hum a song";
 let hugStr = "Hug hug a Bear";
 let hutStr = "I saw people living in huts"
 let huRegex = /hu./gi;
-console.log(huRegex.test(humStr), humStr.match(huRegex)); // returns true, ["hum"]
-console.log(huRegex.test(hugStr), hutStr.match(huRegex));// returns true , ["hut"]
-console.log(huRegex.test(hutStr), hugStr.match(huRegex)); //returns true, ["Hug, hug"]
+console.log(huRegex.test(humStr), humStr.match(huRegex)); 
+// returns true, ["hum"]
+console.log(huRegex.test(hugStr), hutStr.match(huRegex));
+// returns true , ["hut"]
+console.log(huRegex.test(hutStr), hugStr.match(huRegex)); 
+//returns true, ["Hug, hug"]
 
 /*Complete the regex unRegex so that it matches the strings run, sun, fun, pun, nun, and bun. Your regex should use the wildcard character.*/
 let unStr = "The challenge is run, sun, fun, pun, nun, and bun";
@@ -68,16 +86,23 @@ console.log(unResult);
 
 You learned how to match literal patterns (/literal/) and wildcard character (/ .  /). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
 
-You can search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+You can search for a literal pattern with some flexibility 
+with character classes. Character classes allow you to define 
+a group of characters you wish to match by placing them 
+inside square ([ and ]) brackets.
 
-For example, you want to match bag, big, and bug but not bog. You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters a, i, or u.
+For example, you want to match bag, big, and bug but not bog. 
+You can create the regex /b[aiu]g/ to do this. 
+The [aiu] is the character class that will only match the 
+characters a, i, or u.
 
 */
 let bagStr = "Match all the following bag, big, bug but not bog";
 let bagRegex= /b[aiu]g/g;
 console.log(bagStr.match(bagRegex));
 
-/**Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to find all the vowels in the string quoteSample.*/
+/**Use a character class with vowels (a, e, i, o, u) in your 
+regex vowelRegex to find all the vowels in the string quoteSample.*/
 
 let newQuoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let quoteRegex = /[a,e,i,o,u]/gi;
@@ -85,9 +110,14 @@ console.log(newQuoteSample.match(quoteRegex));
 
 /*          Match Letters of the Alphabet
 
-You saw how you can use character sets to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
+You saw how you can use character sets to specify a group of 
+characters to match, but that's a lot of typing when you need to 
+match a large range of characters (for example, every letter in 
+the alphabet). Fortunately, there is a built-in feature that makes 
+this short and simple.
 
-Inside a character set, you can define a range of characters to match using a hyphen character: -.
+Inside a character set, you can define a range of characters to 
+match using a hyphen character: -.
 
 For example, to match lowercase letters a through e you would use [a-e].
 Match all the letters in the string quoteSample.
@@ -113,7 +143,10 @@ let anotherResult = anotherStr.match(qRegex)
 console.log(anotherResult);
 
 /*          Match Numbers and Letters of the Alphabet
-Using the hyphen (-) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+
+Using the hyphen (-) to match a range of characters is not limited 
+to letters. It also works to match a range of numbers.
+
 
 For example, /[0-5]/ matches any number between 0 and 5, including the 0 and 5.
 
@@ -128,7 +161,10 @@ console.log(jennyResult);
 console.log(nuJennyResult);
 
 
-/*Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6. Remember to include the appropriate flags in the regex.
+/*Create a single regex that matches a range of letters between h 
+and s, and a range of numbers between 2 and 6. Remember to include 
+the appropriate flags in the regex.
+
 */
 let quoteSampleOff = "Blueberry 3.141592653s are delicious.";
 let quoRegex = /[h-s2-6]/gi;
@@ -136,13 +172,23 @@ let quResult = quoteSampleOff.match(quoRegex);
 console.log(quResult);
 
 /*Match Single Characters Not Specified
-So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called negated character sets.
+So far, you have created a set of characters that you want to 
+match, but you could also create a set of characters that you 
+do not want to match. These types of character sets are called 
+negated character sets.
 
-To create a negated character set, you place a caret character (^) after the opening bracket and before the characters you do not want to match.
+To create a negated character set, you place a caret character (^) 
+after the opening bracket and before the characters you do not want 
+to match.
 for example:  /[^aeiou]/g
-matches all characters that are not a vowel. Note that characters like ., !, [, @, / and white space are matched - the negated vowel character set only excludes the vowel characters.
+matches all characters that are not a vowel. Note that characters 
+like ., !, [, @, / and white space are matched - the negated 
+vowel character set only excludes the vowel characters.
 
-    Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex.
+
+    Create a single regex that matches all characters that are not 
+a number or a vowel. Remember to include the appropriate flags 
+in the regex.
 */
 let miceStr = "3 3blind mice.";
 let miceRegex = /[^0-9a-i. ]/gi;
@@ -155,15 +201,24 @@ console.log(mcResult);
 /*
 Match Characters that Occur One or More Times
 
-Sometimes, you need to match a character (or group of characters) that appears one or more times in a row. This means it occurs at least once, and may be repeated.
+Sometimes, you need to match a character (or group of characters) 
+that appears one or more times in a row. This means it occurs at 
+least once, and may be repeated.
 
-You can use the + character to check if that is the case. Remember, the character or pattern has to be present consecutively. That is, the character has to repeat one after the other.
+You can use the + character to check if that is the case. 
+Remember, the character or pattern has to be present consecutively. That is, the character has to repeat one after the other.
 
-For example, /a+/g would find one match in abc and return ["a"]. Because of the +, it would also find a single match in aabc and return ["aa"].
+For example, /a+/g would find one match in abc and return ["a"]. 
+Because of the +, it would also find a single match in aabc and 
+return ["aa"].
 
-If it were instead checking the string abab, it would find two matches and return ["a", "a"] because the a characters are not in a row - there is a b between them. Finally, since there is no a in the string bcd, it wouldn't find a match.
+If it were instead checking the string abab, it would find 
+two matches and return ["a", "a"] because the a characters are 
+not in a row - there is a b between them. Finally, since there is 
+no a in the string bcd, it wouldn't find a match.
 
-You want to find matches when the letter s occurs one or more times in Mississippi. Write a regex that uses the + sign.*/
+You want to find matches when the letter s occurs one or more times in 
+Mississippi. Write a regex that uses the + sign.*/
 let riversName = "Mississippi";
 let ssRegex = /s+/g;
 let wholeName = /[a-z]+/gi;

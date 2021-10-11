@@ -1,8 +1,13 @@
 /*            Build JavaScript Objects
+
 You may have heard the term object before.
 
-Object  are similar to arrays, except that instead of using index to access their data, you access the data in object through what are called properties.
-Objects are usefull for storing data in a structured way, and can represent real world objects, like cat.
+Object  are similar to arrays, except that instead of using index 
+to access their data,you access the data in object through 
+what are called properties.
+
+Objects are usefull for storing data in a structured way, 
+and can represent real world objects, like cat.
 
 Example
  */
@@ -13,7 +18,10 @@ var cat = {
     "tail":1,
     "enemies": ["Water", "Dogs"]
 };
-// In this example, all the properties are stored as strings, such as - "name", "legs", and "tails". However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
+// In this example, all the properties are stored as strings, 
+such as - "name", "legs", and "tails". However, you can also use 
+numbers as properties. You can even omit the quotes for 
+single-word string properties, as follows:
 
 var anotherObject = {
     make: "Ford",
@@ -21,7 +29,8 @@ var anotherObject = {
     "Model": "Mondeo"
 };
 console.log(typeof anotherObject.make); // returns string
-/*However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.*/
+/*However, if your object has any non-string properties, 
+JavaScript will automatically typecast them as strings.*/
 
 var newLocal = {
     "name": "Yorshire Terrier",
@@ -37,9 +46,11 @@ console.log(myDog);
 There are two ways to access the properties of an object: 
 dot notation (.) and bracket notation ([]), similar to an array.
 
-Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+Dot notation is what you use when you know the name of the 
+property you're trying to access ahead of time.
 
-Here is a sample of using dot notation (.) to read an object's property:*/ 
+Here is a sample of using dot notation (.) to read an object's 
+property:*/ 
 
 var myObject = {
     prop1: "val1",
@@ -62,7 +73,10 @@ console.log(shirtValue);
 
 // Accessing Object Properties with Bracket Notation
 
-// The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+// The second way to access the properties of an object is bracket 
+notation ([]). If the property of the object you are trying to 
+access has a space in its name, you will need to use bracket 
+notation.
 
 // Example
 
@@ -86,11 +100,14 @@ var entreeValue = testObject1["an entree"];
 var drinkValue = testObject1["the drink"];
 console.log(entreeValue, drinkValue);
 
-            /* Accessing Objects with Properties with Veriables
+            /* Accessing Objects Properties with Veriables
  
-Another  use of bracket notation on objects is access a property which is stored as value of veriable. This can be very useful for iterating through an object's properties or when accessing look up table.
+Another  use of bracket notation on objects is access a property 
+which is stored as value of veriable. This can be very useful 
+for iterating through an object's properties or when accessing 
+look up table.
 
-     Eample 1 */
+     Example 1 */
 
 var dogs = {
     Fido: "Mutt",
@@ -102,7 +119,10 @@ var myBreed = dogs[myDog1];
 console.log(myBreed); // "Doberman";
 
 // Example 2
-/*Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows: */
+/*Another way you can use this concept is when the property's name 
+is collected dynamically during the program execution, 
+as follows: */
+
 var someObj = {
     propName: "John"
 };
@@ -114,7 +134,9 @@ console.log(propPrefix("Name"));
 var someProp = propPrefix("Name");
 console.log(someObj[someProp]);
 
-// Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name.
+// Note that we do not use quotes around the variable name 
+when using it to access the property because we are using 
+the value of the variable, not the name.
 
 var testObj = {
     12: "Namath",
@@ -126,7 +148,10 @@ var player = testObj[playerNumber];
 console.log(player); // Montana
 
 /*          Updating Object Properties
-After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+
+After you've created a JavaScript object, you can update its 
+properties at any time just like you would update any other 
+variable. You can use either dot or bracket notation to update.
 
 // For example, let's look at ourDog: */
 
@@ -137,7 +162,14 @@ var ourDog = {
     "friends":  ["everything"]
 };
 
-// Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper".
+// Since he's a particularly happy dog, let's change his name to 
+"Happy Camper". Here's how we update his object's name 
+property: 
+
+ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; 
+
+Now when we evaluate ourDog.name, instead of getting "Camper", 
+we'll get his new name, "Happy Camper".
 
 // Adding New properties to ourDog object:
 
@@ -175,7 +207,11 @@ console.log(ourDog);// deletes diet properties;
 
 // Using Objects for Lookups
 
-// Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+// Objects can be thought of as a key/value storage, 
+like a dictionary. If you have tabular data, you can use 
+an object to "lookup" values rather than a switch statement 
+or an if/else chain. This is most useful when you know that 
+your input data is limited to a certain range.
 
 // Here is an example of a simple reverse alphabet lookup:
 
@@ -214,7 +250,10 @@ var result4 = phonaticLookup("bravo");
 console.log(result4);
 
 /*          Testing Objects for Properties
-Sometimes its useful to check if the property of given object exist or not. We can use the .hasOwnProperty(propname) method of objects to determine if  that object has given property name. 
+
+Sometimes its useful to check if the property of given object exist 
+or not. We can use the .hasOwnProperty(propname) method of objects 
+to determine if that object has given property name. 
 
      .hasOwnProperty() returns true or false if the property is found or not.
 
@@ -236,7 +275,10 @@ function checkObj(obj, checkProp) {
 
 /*          Manipulating Complex Objects
 
-Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+Sometimes you may want to store data in a flexible Data Structure. 
+A JavaScript object is one way to handle flexible data. They allow 
+for arbitrary combinations of strings, numbers, booleans, arrays, 
+functions, and objects.
 
 // Here's an example of a complex data structure:*/ 
 
@@ -266,7 +308,9 @@ ourMusic.myMusic = {
 console.log(ourMusic);
 
 /* Accessing Nested Objects
-The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+The sub-properties of objects can be accessed by chaining together 
+the dot or bracket notation.
 
 // Here is a nested object:*/
 var ourStorage = {
@@ -302,7 +346,10 @@ var gloveBoxContent = myStorage.car.inside["glove box"];
 console.log(gloveBoxContent);
 
 /*          Accessing Nested Arrays
-As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.*/ 
+As we have seen in earlier examples, objects can contain both 
+nested objects and nested arrays. Similar to accessing nested 
+objects, array bracket notation can be chained to access 
+nested arrays.*/ 
 
 // Example
 
