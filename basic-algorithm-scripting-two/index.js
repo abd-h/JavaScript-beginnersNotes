@@ -210,12 +210,14 @@ console.log(booWho("false")) // return false.
 
  11.                Title Case a Sentence
 
-Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the 
+word is in lower case.
 
 For the purpose of this exerc*/
 
 function titleCase(str) {
-  return str.toLowerCase()
+  return str
+                .toLowerCase()
                 .split(" ").map(a => a[0].toUpperCase().concat(a.slice(1)))
                 .join(" ");
 }
@@ -223,5 +225,33 @@ console.log(titleCase("I'm a little tea pot")) //returns a string.
 console.log(titleCase("I'm a little tea pot")) //returns the string I'm A Little Tea Pot.
 console.log(titleCase("sHoRt AnD sToUt")) //returns the string Short And Stout.
 console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")) // returns the string Here Is My Handle Here Is My Spout.
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ 12.      Slice and Splice
+You are given two arrays and an index.
+
+Copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index n of the second array.
+
+Return the resulting array. The input arrays should remain the same after the function runs.*/
+
+function frankenSplice(arr1, arr2, n){
+    let array2 = arr2.slice()
+    array2.splice(n,0, ...arr1)
+    return array2; 
+}
+console.log(frankenSplice([1,2,3], [4,5,6], 1)); // returns [4, 1, 2, 3, 5, 6]
+console.log(frankenSplice([1, 2, 3], [4, 5], 1)) // returns [4, 1, 2, 3, 5].
+console.log(frankenSplice([1, 2], ["a", "b"], 1)) // returns ["a", 1, 2, "b"].
+console.log(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", 
+"toes"], 2)) // returns ["head", "shoulders", "claw", "tentacle", "knees", "toes"].
+//All elements from the first array should be added to the second array in their original order. 
+console.log(frankenSplice([1, 2, 3, 4], [], 0)) // returns [1, 2, 3, 4].
+//The first array should remain the same after the function runs.
+//The second array should remain the same after the function runs.
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+*/
 
 
