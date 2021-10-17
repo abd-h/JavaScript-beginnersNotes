@@ -252,6 +252,103 @@ console.log(frankenSplice([1, 2, 3, 4], [], 0)) // returns [1, 2, 3, 4].
 //The second array should remain the same after the function runs.
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-*/
+ 13.     Remove all falsy values from an array.
 
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 
+Hint: Try converting each value to a Boolean.*/
+
+function bouncer(arr) {
+
+    return arr.filter(x => Boolean(x));
+}
+console.log(bouncer([7, "ate", "", false, 9])) // returns [7, "ate", 9].
+console.log(bouncer(["a", "b", "c"])) //returns ["a", "b", "c"].
+console.log(bouncer([false, null, 0, NaN, undefined, ""]))// returns [].
+console.log(bouncer([null, NaN, 1, 2, undefined]))// returns [1, 2].
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ 14.      Where do I BelongPassed
+Return the lowest index at which a value (second argument) should be inserted into 
+an array (first argument) once it has been sorted. The returned value should be a number.
+
+For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), 
+but less than 2 (index 1).
+
+Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it 
+will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).*/
+
+function getIndexToIns(arr, num) {
+  let arr2 = arr.concat(num).sort((a, b) => (a === b)? 0 :(a > b)? 1 : -1).indexOf(num)
+  return arr2;
+}
+console.log(getIndexToIns([40, 60], 50)); // returns 1
+console.log(getIndexToIns([10, 20, 30, 40, 50], 35)) // returns 3.
+console.log(getIndexToIns([10, 20, 30, 40, 50], 35))// returns a number.
+console.log(getIndexToIns([10, 20, 30, 40, 50], 30))// returns 2.
+console.log(getIndexToIns([10, 20, 30, 40, 50], 30)) // return sa number.
+console.log(getIndexToIns([40, 60], 50)) // returns 1.
+console.log(getIndexToIns([40, 60], 50))// returns a number.
+console.log(getIndexToIns([3, 10, 5], 3))// returns 0.
+console.log(getIndexToIns([3, 10, 5], 3)) //  returns a number.
+console.log(getIndexToIns([5, 3, 20, 3], 5)) //returns 2.
+console.log(getIndexToIns([5, 3, 20, 3], 5)) //returns a number.
+console.log(getIndexToIns([2, 20, 10], 19)) // returns 2.
+console.log(getIndexToIns([2, 20, 10], 19)) // returns a number.
+console.log(getIndexToIns([2, 5, 10], 15)) // returns 3.
+console.log(getIndexToIns([2, 5, 10], 15)) // return a number.
+console.log(getIndexToIns([], 1)) // returns 0.
+console.log(getIndexToIns([], 1)) // return a number.
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ 15.     Mutations
+
+Return true if the string in the first element of the array contains all of the letters 
+of the string in the second element of the array.
+
+For example, ["hello", "Hello"], should return true because all of the letters in 
+the second string are present in the first, ignoring case.
+
+The arguments ["hello", "hey"] should return false because the string hello does 
+not contain a y.
+
+Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.*/
+
+function mutation(arr) {
+    return arr[1]
+                        .toLowerCase()
+                        .split("")
+                        .every(i => arr[0].toLowerCase().split("").indexOf(i) != -1)
+}
+console.log(mutation(["Hello", "hay"])) // returns false.;
+console.log(mutation(["hello", "Hello"])); // returns true
+console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+console.log(mutation(["Mary", "Army"])); // returns true
+console.log(mutation(["Mary", "Aarmy"])); // returns true
+console.log(mutation(["Alien", "line"])); // returns true
+console.log(mutation(["Alien", "line"])); // returns true
+console.log(mutation(["floor", "for"])); // returns true
+console.log(mutation(["hello", "neo"])); // returns false
+console.log(mutation(["voodoo", "no"]));// returns false
+console.log(mutation(["ate", "date"])); // returns false
+console.log(mutation(["Tiger", "Zebra"])); // returns false
+console.log(mutation(["Noel", "Ole"])); // returns true
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ 16.      Chunky Monkey
+Write a function that splits an array (first argument) into groups 
+the length of size (second argument) and returns them as a two-dimensional array.*/
+
+function chunkArrayInGroups(arr, size) {
+  let result = []
+  let arr1 = arr;
+  console.log(arr1.length / size);
+  let s = arr1.splice(0, size)
+  let s2 = arr1.splice(size)
+  result.push([s], arr1, s2)
+  return result
+}
+
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
