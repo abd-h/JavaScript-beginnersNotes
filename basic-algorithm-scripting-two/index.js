@@ -340,13 +340,12 @@ Write a function that splits an array (first argument) into groups
 the length of size (second argument) and returns them as a two-dimensional array.*/
 
 function chunkArrayInGroups(arr, size) {
-  let result = []
-  let arr1 = arr;
-  console.log(arr1.length / size);
-  let s = arr1.splice(0, size)
-  let s2 = arr1.splice(size)
-  result.push([s], arr1, s2)
-  return result
+  if(arr.length <= size){
+    return [arr]
+  }
+  else {
+    return [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
+  }
 }
 
 console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
