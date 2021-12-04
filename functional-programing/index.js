@@ -212,4 +212,21 @@ const finalTabs = socialWindow
                 .join(workWindow.tabClose(1).tabOpen);
 console.log(finalTabs.tabs);                
 
+/*************************************************
+ *************************************************
+ 
 
+ Avoid Mutations and Side Effects Using Functional Programming
+
+ If you haven't already figured it out, the issue in the previous challenge was with the splice call in the tabClose() function. 
+
+ Unfortunately, splice changes the original array it is called on, so the second call to it used the modified array, and gave unexpected results.
+
+ This is small example of much larger partten- you call a function on avariable, array, or an object, and the function changes the variable or something in the object.
+
+ One of the core principles of functional programming is to not change anythings. Change leads to bugs. It's easier to prevent bugs knowing that your function don't change anything, including the function arguments or any global variable.
+
+ The previous example didn't have any complicated operations, but the splice method change the original array, and resulted in a bug.
+
+ 
+ */
