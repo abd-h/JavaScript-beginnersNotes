@@ -189,13 +189,27 @@ Window.prototype.tabOpen = function(tab){
 
 // When you close a tab
 Window.prototype.tabClose = function(index) {
-    const tabsBeforeIndex = this.tabs.splice(0, index);// Get the tabs before the tab
+    const tabsBeforeIndex = this.tabs.slice(0, index);// Get the tabs before the tab
 
-    const tabsAfterIndex = this.tabs.splice(index + 1);// Gets the tab after tab
+    const tabsAfterIndex = this.tabs.slice(index + 1);// Gets the tab after tab
 
     this.tab = tabsBeforeIndex.concat(tabsAfterIndex);// Join them together
 
     return this;
 }
+
+// Let's create three browser windows
+ const workWindow = new Window(['GMAIL', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']);// Your mailbox, drive, and other work sites
+ const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']);// Social sites
+
+const videoWindow = new Window(['Netflix', 'YouTube', 'Vimo', 'Vine'])// Entertainment site
+
+// Now perform the tab opening, closing and other operations
+
+const finalTabs = socialWindow
+                .tabOpen()//  Open a new tab for cat memes
+                .join(videoWindow.tabClose(2))// Close third tab in window and join
+                .join(workWindow.tabClose(1).tabOpen);
+console.log(finalTabs.tabs);                
 
 
