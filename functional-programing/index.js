@@ -286,3 +286,30 @@ function incrementer2(number) {
 }
 console.log(incrementer2(fixedValue2));
 console.log(fixedValue2);
+
+/*************************************************
+ ***********************************************
+ 
+Refactor Global Variables out of functions
+
+So far, we have seen two distinct priciples for functional programming:
+
+    1.    Don't alter a variable or object - create new 
+          variables or objects and return them if need be from a function. 
+          Hint: using something like const newArr = arrVar, 
+          where arrVar is an array will simply is an array will simply create a reference to the existing variable and not a copy. 
+          So changing the value in newArr would change the value in arrVar.
+          
+    2.   Declare function parameters - any computation inside a function depends only the arguments passed to the fumction and not any global object or variable.
+    
+Adding one to a number is not very exciting, but we can apply these principles with arrays or more complex objects. 
+
+    ********* ********* ********* *********
+    *                  CHALLENGE FIVE                     *
+    * ********* ********* ********* *******
+    
+Rewrite the code so the global array bookList is not changed inside either function. The add function should add the given bookname to the end of the array passed to it and return a new array(list). The remove function should remove a given bookName from an array passed to it.
+
+Note: Both functions should return an array, and any new parameters should be added be added before the bookName parameter.
+      */
+
