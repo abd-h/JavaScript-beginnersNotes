@@ -308,8 +308,82 @@ Adding one to a number is not very exciting, but we can apply these principles w
     *                  CHALLENGE FIVE                     *
     * ********* ********* ********* *******
     
-Rewrite the code so the global array bookList is not changed inside either function. The add function should add the given bookname to the end of the array passed to it and return a new array(list). The remove function should remove a given bookName from an array passed to it.
+Rewrite the code so the global array bookList is not changed in side the function. The add function should add the given bookName to the end of the array passed to it and return new array(list). The remove function should remove the given bookName from the array passed to it.
 
-Note: Both functions should return an array, and any new parameters should be added be added before the bookName parameter.
-      */
+Note: Both functions should return an array, and any new parameters should be added before bookName parameter.
+*/
+
+// The global variable
+const bookList = [
+    'The Hound of the Baskervilles', 'On the Electrodynamics of Moving Bodies', 'Philosophiea Naturalis Principia Mathmatica', 'Disquisitiones Arithmeticae'
+];
+
+// Change code below this line
+function add(bookList, bookName) {
+    const newBookList = bookList.slice();
+    newBookList.push(bookName);
+    return newBookList;
+}
+// console.log(add(bookList, "Just updated"));
+// console.log(bookList);
+
+// Change code below this line
+function remove(bookList, bookName) {
+    const book_index = bookList.indexOf(bookName[1]);
+    const newBookList = bookList.slice();
+    if (book_index >= 0) {
+        newBookList.splice(book_index, 1);
+    }
+    return newBookList;
+}
+
+const newBookList = add(bookList, `A Brief  History of Time`);
+console.log(`---------------------------------------`);
+console.log(newBookList);
+const newerBookList = remove(bookList, `On The Electrodynamics of Moving Bodies`);
+console.log(`---------------------------------------`);
+console.log(newerBookList);
+const newestBookList = remove(add(bookList, `A Brief History of Time`), `On The Electrodynamics of  Moving Bodies`);
+
+console.log(`---------------------------------------`);
+console.log(newestBookList);
+
+/*************************************************
+ ************************************************
+ 
+ Use the map Method to Extract Data from an Array
+ 
+ So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+ 
+This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+
+It would make sense to be able to pass them as arguments to other functions. Functions are considered first class objects in JavaSctipt, which means they can be used like any other objects. They can be saved in a variables, stored in an object, or passed as function arguments.
+
+Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at Array.prototype.map(), or more simply map.
+
+The map method iterates over each item in an array and returns a new array containing the result of calling the callback function on each element. It does this without mutating the original array.
+
+When the callback is used, it is passed three arguments.
+    1.  The first argument is the current element being processed.
+    2.  The second is the index of that element.
+    3.  And the third is the array which the map method is called.
+    
+See below for an example using the map method on the users array to return a new array containing only the names of  the users as elements. for simplicity, the example only uses the first argument of the callbak.  
+*/
+const users = [
+    { name: "John", age: 10},
+    { name: "Amy", age: 20},
+    { name: " comperCat", ager: 10}
+]
+
+const names = users.map(user => user.name);
+console.log(names);
+/*
+The console would display the value ["John", " Amy", camperCat] 
+
+    ********* ********* ********* *********
+    *                  CHALLENGE SIX                    *
+    * ********* ********* ********* *******
+
+The watchList array hokds objets with information on several movies. Use map on watchList to assign a new array of objects to the ratings variable.Each movie in the new array shluld have only a title key with the name of thefilm, and a rating key with the IMDB rating. Tha cide in the editor currently uses a for loop to do this, so you should replace the loop functionality with your map expression.  */
 
