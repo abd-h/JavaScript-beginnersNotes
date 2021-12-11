@@ -79,3 +79,70 @@ function nonMutatingSplice(cities) {
 }
 const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 console.log(nonMutatingSplice(inputCities));
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+/* Combine Two Arrays Using the concat Method
+
+Concatination means to hoin items end to end. JavaScript offers the concat method for both strings and arrays
+that work in the same way. gor arrays. the method is called on one, then anither array is provided as the argument to concat, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:*/
+const twoArr = [1,2,3].concat([4,5,6]);
+console.log(twoArr);
+/*The returned array would be [1, 2, 3, 4, 5, 6]
+
+Use the concat method in the nonMutatingConcat function to concatenate attach to the end of  original.
+The function should return the concatenated array.
+
+function nonMutatingConcat(original, attach) {
+  // Only change code below this line
+
+
+  // Only change code above this line
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];
+nonMutatingConcat(first, second);*/
+
+function nonMutatingConcat(original, attach) {
+    return original.concat(attach);
+}
+const first = [1, 2, 3],
+         second = [4,5];
+console.log(nonMutatingConcat(first, second));         
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+/*
+Add Elements to the End of an Array Using concat Instead of  push
+
+Functional programming is all about creating and using non-mutating functions.
+
+The last challenge introduced the concat method as a way to combine arrays into a new one without mutating the original arrays. Compare concat to the push method. push adds an item to the end of the same array its called on, which mutates the array. Here's an example:*/
+
+const concatArr = [1,2, 3];
+concatArr.push([4,5, 6]);
+console.log("::::::::::::::::::::::::::::::::::::::::::::::::::");
+console.log(concatArr);
+// concatArr would have a modified value of  [1,2,3,[4, 5,6]]
+
+/* concat offers a way to add new items to the end of an array without any mutinting side effects.'
+
+Change the nonMutatingPush function so it uses concat to add newItem to the end of original instead of push.
+The function should retain an array.
+
+function nonMutatingPush(original, newItem) {
+  // Only change code below this line
+  return original.push(newItem);
+
+  // Only change code above this line
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];
+nonMutatingPush(first, second);*/
+
+function nonMutatingPush(original, newItem){
+    return original.concat(newItem);
+}
+const first1 = [1,2,3],
+          second2 = [4, 5];
+console.log(nonMutatingPush(first1, second2));          
