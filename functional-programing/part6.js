@@ -69,12 +69,16 @@ The function should return a new array containing the squares of only the positi
 
 Note: Your function should not use any kind of for or while loops or the forEach() Method.
  */
-const squareList = arr => {
+{
+    const squareList = arr => {
 return arr.filter(num =>{
     if(num > 0){
       return Number.isInteger(num);
     }
   }).map(sqrNum => sqrNum * sqrNum)                                        
 }
+const l = Math.pow(3, 2);
+console.log(l);
 const squaredIntegers = squareList(squareList([-3, 4.8, 5, 3, -3.2]));
 console.log(squaredIntegers);
+}
