@@ -38,5 +38,43 @@ const usersObj = usersR.reduce((obj, users) => {
     return obj;
 }, {});
 console.log(usersObj);
+/* The console would display the value [John: 20, Amy: 34, CamperCat: 10]; 
 
+The variable watchList holds an array of objects with information on several movies. 
+Use reduce to find average IMBD rating of  directed by Christopher Nolan.
+Recall from prior challenges how to filter data and map over it to pull what you need.
+You may need to create other variables, and return the  average rating from getRating.
+Note that the rating values are saved as strings in the objects and need to be converted into numbers before they are used in any mathmetical operations*/
 
+function getRating(watchList) {
+    const cNolanMovies = watchList.filter((m) =>{ 
+        if(m.Director === "Christopher Nolan") {
+            // console.log(`Title: ${m.Title}, rating: ${m.imdbRating}`);
+          return m;
+        }
+});
+   let avarageRating = cNolanMovies.reduce((sum, rating) =>{
+       return sum + Number(rating.imdbRating)
+   },0);
+   return avarageRating / cNolanMovies.length
+}
+console.log(getRating(watchList));
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Use Higher-Order Function map, filter, or reduce to Solve a complex problem.
+Now that you have worked through a few challenges using higher-order function like map(), filter(), and reduce(), you now got to apply them to solve a more complex challenge.
+
+Complete the code for the squareList function using any combination of map(), filter(), and reduce().
+The function should return a new array containing the squares of only the positive integers(decimal numbers are not integers) when array of real numbers is passed to it. An example of an array of real numbers is [-3, 4.8, 5, 3, -3.2].
+
+Note: Your function should not use any kind of for or while loops or the forEach() Method.
+ */
+const squareList = arr => {
+return arr.filter(num =>{
+    if(num > 0){
+      return Number.isInteger(num);
+    }
+  }).map(sqrNum => sqrNum * sqrNum)                                        
+}
+const squaredIntegers = squareList(squareList([-3, 4.8, 5, 3, -3.2]));
+console.log(squaredIntegers);
