@@ -60,3 +60,55 @@ function checkPositive2(arr) {
    return arr.some(a => a > 0 )
 }
 console.log(checkPositive2([1, 2, 3, -4, 5]));
+
+/* Introduction to Currying and Partial Application
+The arity of function is the number of  arguments it requires. Currying a function means to 
+convert a function of n arity into n function of arity 1.
+
+In other words, it restructures a function so it takes one argument, then returns another 
+function that takes the next argument, and so on.
+
+Here's an example:*/
+
+function unCurried(x,y) {
+    return x + y;
+}
+
+function curried(x){
+    return function(y) {
+        return x + y;
+    }
+}
+// ES6
+const es6Curried = (x => y => x + y);
+console.log(curried(1)(2)); // returns 3
+console.log(es6Curried(1)(2)); // returns 3
+/* 
+This is usefull in your program if you can't supply all the arguments to a function at one time.
+You can save each function call into a variable. Here's an example using the curried function in the example above: */
+
+const funcForY = curried(1);
+console.log(funcForY(5));// returns 6
+
+/* Similarly, partial application can be described as applying a few arguments to a function at time and returning another function that is 
+applied to more arguments.
+
+Here's an example:*/
+
+function impartial(x, y, z) {
+    return x+ y+z;
+}
+
+const partialFn = impartial.bind(this, 1, 2);
+console.log(partialFn(12)); // returns 15
+
+/* Fill in the body of the add function so it uses currying to add parameters x, y, z.*/
+function addThem(x) {
+    return function(y){
+        return function(z) {
+            return x + y + z;
+        }
+    }
+}
+console.log(addThem(10)(20)(30));
+const addA = addThem.bind(this, 10, 10);
