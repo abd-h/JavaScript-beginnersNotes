@@ -1,4 +1,4 @@
-/*  Sum all Numbers in a Range
+/*  Sum a;ll Numbers in a Range
  
 We'll pass you an array of  two numbers.
 Return the sum of  those numbers plus the sum of all th numbers between them.
@@ -50,3 +50,21 @@ console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]));
 console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]));
 // console.log(diffArray());
 // console.log(diffArray());
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Seek and Destroy
+
+You will be provided with an initial array (the first argument in the destroyer function),
+ followed by one or more arguments. Remove all elements from the initial array that are 
+ the same value as these arguments. */
+
+ function destroyer(arr) {
+    const [,...args] = arguments;
+    return arr.filter(a => args.indexOf(a) === -1)
+}
+ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // returns [1, 1].
+ console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)); // returns [1, 5, 1].
+ console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5)); // returns [1].
+ console.log(destroyer([2, 3, 2, 3], 2, 3)); // returns []
+ console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // returns  ["hamburger"]
+ console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")); // returns [12,92,65]
