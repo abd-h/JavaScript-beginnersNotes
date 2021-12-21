@@ -1,5 +1,5 @@
 /*  Sum a;ll Numbers in a Range
- 
+
 We'll pass you an array of  two numbers.
 Return the sum of  those numbers plus the sum of all th numbers between them.
 the lowes number will not always come first.
@@ -55,7 +55,7 @@ console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]));
 Seek and Destroy
 
 You will be provided with an initial array (the first argument in the destroyer function),
- followed by one or more arguments. Remove all elements from the initial array that are 
+ followed by one or more arguments. Remove all elements from the initial array that are
  the same value as these arguments. */
 
  function destroyer(arr) {
@@ -68,3 +68,40 @@ You will be provided with an initial array (the first argument in the destroyer 
  console.log(destroyer([2, 3, 2, 3], 2, 3)); // returns []
  console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // returns  ["hamburger"]
  console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")); // returns [12,92,65]
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+                Wherefore art thou
+Make function that looks through an array of objects(first argument) and returns an array
+of all objects that have matching name and value pairs (second argumrnt).
+Each name and value pair of the source objects has to be present in the object
+from the collection if it is to be included in the return array.
+
+For example, if the first argument is [
+    {first: "Romeo", last: "Montegue"}, {first: "Mercutio", last: "null"},
+    {first: "Tybalt", last: "Capulet"}, and the second argument is
+    {last: "Capult"}, then you must return the third object from the array (the first argument),
+    becausse it contains the name and its value, that wast past the second argument.
+] */
+function searchObj(a){
+    let result = [];
+    for(let i = 0; i < a.length; i++){
+        result.push(a[i])
+    }
+    return result
+}
+function whatIsInAName(collection, source) {
+  const enteries1= Object.entries(collection);
+  const enteries2  = Object.entries(source);
+    return collection.map(a => console.log(a[1][1]))
+}
+
+console.log(whatIsInAName([
+    { first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+console.log(whatIsInAName([
+    { "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }));
+console.log(whatIsInAName([
+    { "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }],
+    { "apple": 1, "bat": 2 }));
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }));
+console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}));
