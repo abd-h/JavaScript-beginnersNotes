@@ -89,12 +89,30 @@ function searchObj(a){
     }
     return result
 }
-function whatIsInAName(collection, source) {
-  const enteries1= Object.entries(collection);
-  const enteries2  = Object.entries(source);
-    return collection.map(a => console.log(a[1][1]))
-}
+// Created my own filter method
+Array.prototype.myFilter = (function(callback) {
+    let newArray = [];
+    this.forEach(i => {
+        let result = callback(i);
+        (result)? newArray.push(i)
+        : [];
+    })
+    return newArray;
+})
 
+const myNums = [20,49,59,200, 300];
+const moreThan100 = myNums.myFilter(a => a > 100);
+console.log(moreThan100);
+
+function whatIsInAName(collection, source) {
+    const srcKey = Object.keys(source);
+    return collection.myFilter(obj => {
+        return srcKey.map(key => {
+           return obj[key] === source[key]
+        }).reduce((a, b) => a && b)
+    })
+}
+console.log("::::::::::::       :::::::::::::::::         :::::::::::::");        
 console.log(whatIsInAName([
     { first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 console.log(whatIsInAName([
