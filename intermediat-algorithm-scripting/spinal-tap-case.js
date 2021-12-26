@@ -1,18 +1,7 @@
 /* Spinal Tap Case
 Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.*/
-function isUpperCase(str){
-    return /^[A-Z]*$/.test(str);
-}
-console.log(isUpperCase("FOO"));
-console.log(isUpperCase("fOa"));
-console.log(isUpperCase());
 function spinalCase(str){
-  return str.split(" ")
-                .filter(a => {
-                   for(let i = 0; i < a.length; i++) {
-                       console.log(a[1]);
-                   }
-                })
+    return str.replace(/([a-z])([A-Z])|_+|\s/g, "$1-$2").toLowerCase();
 }
 
 
@@ -30,21 +19,7 @@ console.log(spinalCase("AllThe-small Things"))  // returns the string all-the-sm
 let spinalTapStr = "thisIsSpinalTap";
 
 function spinalTap(str) {
-    let s = [];
-    let t = [];
-    let strRegex = /[a-z]/;
-    let strRegex2 = /[A-Z]/;
-
-    
-      let newStr = "";
-    if(str[0] == str.match(strRegex)[0]) {
-         newStr += str.indexOf(str.match(strRegex2));
-         s.push(str.slice(str.indexOf(str.match(strRegex2))))
-         s.unshift("-")
-         s.map(a => t.push(a[0].toLowerCase().concat(a.slice(1))))
-         
-         
-    }
-    return t
+    return str.replace(/([a-z])([A-Z])/g, "$1$2")
 }
+console.log("___________________________________________");
 console.log(spinalTap(spinalTapStr));
