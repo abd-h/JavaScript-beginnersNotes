@@ -161,4 +161,23 @@ let quoteSample3 = "Bluebery 3.141592653s";
 let blueRegex = /[h-s2-6]/gi;
 let blueResult = quoteSample3.match(blueRegex);
 console.log(blueResult.join(" "));
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                Match Single Characters not Specified
+So far, you have created set of characters that you want to match, but you could also make 
+a set of characters that you do not want match. These type of character sets are called negated 
+character sets.      
+
+To create a negated character set, you place a caret character (^) after the opening bracket and before the 
+characters that you do not want to match.
+
+For example, /[^aeiou]/gi matches all characters that are not vowel. Note that characters like
+., !, [, @, / and white space are matched - the negated vowel characters only excludes the vowel character
+sets.
+
+Create a single regex that matches all characters that are not a number or a vowel. Remember to include the 
+appropriate flags in the regex.
+*/
+let quoteSample4 = "3 blind mice.";
+let myRegex3 = /[^aeiou0-9]/gi;
+console.log(quoteSample4.match(myRegex3));
 
