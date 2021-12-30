@@ -10,19 +10,16 @@ Third argument is what you will be replacing the second argument with (after).
 Note: Preserve the case of the first character in the original word when you replacing it. For example if you mean to replace the word Book with the dog, it should be replaced as Dog
  */
 function myReplace(str, before, after) {
-    let s = [];
-    let d =[];
-    let regex = /[A-Z]/;
-    let newStr = str.split(" ");
-    console.log(newStr);
-   newStr.map((a, b, c) => {
-       if (a === before){
-           s.push(a = b)
-       }
-    })
+    let s = [],
+         newAfter = after.split(" ").slice().join(" "),
+         regex = /[A-Z]/,
+         newStr = str.split(" ");
+    newStr.map((a, b) => (a === before)? s.push(a = b) : []);
+    (before[0].match(regex))? newAfter = after[0].toUpperCase().concat(after.slice(1,))
+    :newAfter = after[0].toLowerCase().concat(after.slice(1,));
     s = s[0]
-    newStr.splice(s, 1);
-    return newStr
+    newStr.splice(s, 1, newAfter)
+    return newStr.join(" ");
 }
 
 console.log(myReplace("Let us go to the store", "store", "mall")); // should return the string Let us go to the mall.
