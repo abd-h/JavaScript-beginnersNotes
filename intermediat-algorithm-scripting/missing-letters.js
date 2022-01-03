@@ -9,18 +9,17 @@ function fearNotLetter(str) {
         "m","n","o","p","q","r","s","t","u","v","w","x",
         "y","z"
     ];
-    let newStr = str.split(""),
-         s = alphabet.slice(alphabet.indexOf(str[0]), alphabet.indexOf(str[str.length -1])+1)
-  
-    s = s.map(a => {
-        if(newStr.indexOf(a) === -1) {
-            return a;
-        } else if (newStr === a) {
-            return undefined;
+    // let newStr = str.split(""),
+    let    s = alphabet.slice(alphabet.indexOf(str[0]), alphabet.indexOf(str[str.length -1])+1)
+    if (alphabet.length === s.length){
+            return undefined
+        } else {
+            return s.map(a => {
+                if(str.indexOf(a) === -1) {
+                return a;
+                }       
+            }).join('');
         }
-        return undefined
-    })
-    return  s.join("")
 }
 console.log(fearNotLetter("abce")); // should return the string d.
 
