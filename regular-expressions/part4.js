@@ -109,9 +109,17 @@ let numRegex = /\d/g;
 let numResult = movieName.match(numRegex).length;
 console.log(numResult);
 
-/*Match All Non-Numbers
-The last challenge showed how to search for digits using the shortcut \d with a lowercase d. You can also search for non-digits using a similar shortcut that uses an uppercase D instead.
+/*                          Match All Non-Numbers
+The last challenge showed how to seatch for digits using the shortcut \d with lowercase d.
+You can also seatch for non-digits using similar shortcut that uses an uppercase D instead.
 
-The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+The shortcut to look for non-digit characters is \D. This is equal to the character class [^0-9],
+which looks for a single character that is not a number between zero and nine. 
 
-Use the shorthand character class for non-digits \D to count how many non-digits are in movie titles.*/
+Use the shorthand character class for non-digit \D to count how many non-digits are in a 
+movie titles.*/
+
+let nonDigitMovieName = "2001: A Space Oddyssey";
+let nonDigitRegex = /\D/g;
+let nonDigitResult = nonDigitMovieName.match(nonDigitRegex).length;
+console.log(nonDigitResult);
