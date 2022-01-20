@@ -67,6 +67,58 @@ console.log(memoizedAdd(3)); // cached
 console.log(memoizedAdd(4)); // calculated
 console.log(memoizedAdd(4)); // cached
 
+/*Now that's grat! This simple memoize function will wrap any simple function into a memoized equovalent.
+The code works fine for simple functions and it can be easily tweaked to handle any number of arguments as per your needs. Another alternative is to make use of some de-facto libraries such as:
+
+Lodash's _.memoize(func, [resolver])
+ES7 @memoize decorators from decko
+Memoizing recursive functions
+If you try passing in a recursive function to the memoize function above or _.mrmoize from Lodash, the results won't be as expected since the recursivefunction is calling thememoized function. Kere's how you can tweek a textbook factorial example (codepen);    */
+
+// Same memoize function from before
+const factorial = memoize(
+    (x) => {
+        if(x === 0){
+            return 1;
+        } else {
+            return x * factorial(x -1);
+        }
+    }
+);
+console.log(factorial(5)); // calculated 
+console.log(factorial(6)); // calculated for 6 and cached for 5
+/* A few points to note from this code:
+
+The factorial function is recursively calling a  memoized version of  itself.
+The memoized function is caching the values of previous factorials which significantly improves calculations
+since they can be reused factorial(6) = 6 * factorial(5)
+Is memoization same as caching?
+Yes, kind of. Memoizaion is actually a specific type of caching. While caching can refer in general to any storing technique (like HTTP caching) for  future use, memoizing specifically involves caching the return 
+values of a function.
+
+When to memoize your functions
+Although it might look like memoization can be used with all functions, it actually has limited use cases:
+
+In order to memoize a fuction, it should be pure so that return values are the same for sme inputs every time 
+Memoizing is a trade-off between added space and added speed and thus only significant for functions have 
+a limited input range so that cached values can be made use of more frequently.
+
+It might look like you should memoixe your API calls however it it isn't necessary because the browser 
+automatically caches them for you. See HTTP caching for more detail.
+
+The best  use case I found for memoized functions is for heavy computational functions which can significantly
+improve performance  (factorial and fivonacci are not really gokkof real world examples).
+
+If you're into React/Redux you can check out reselect which uses a memoized selector to ensure that 
+calculations only happen when a change happens in a realted part of the state tree.
+
+
+
+
+
+*/
+
+
 
 
 
