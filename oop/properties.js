@@ -75,3 +75,54 @@ console.log(canary.numLegs);
 
  let beagle = new Dog("Spotty");
  console.log(beagle.numLegs);
+ /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+ 
+                        Iterate Over All Properties
+
+You have now seen two kinds of properties: own properties and prototype properties.
+Own properties are defined dirextly on the object instance inself. and prototype properties
+are defined on the prototype. */
+
+function Cat(name) {
+    this.name = name; // own property
+}
+
+Cat.prototype.numLegs = 4; // prototype property
+
+let tiger = new Cat("Indian Tiger");
+let lion = new Cat("King of the Jungle")
+/* Here is how you add tiger's own properties to the array ownProps2 and prototype properties 
+to the array prototypeProps. */
+
+let ownProps2 = [];
+let prototypeProps = [];
+
+for(let props in tiger) {
+    if(tiger.hasOwnProperty(props)) {
+        ownProps2.push(props)
+    } else {
+        prototypeProps.push(props)
+    }
+}
+
+console.log(ownProps2);// would display ["name"]
+console.log(prototypeProps); // would display ["numLegs"]
+
+/*              Understand the Constructor Property
+
+There is a special constructor property located on the object instances duck and beagle that 
+were created in the previous challengs: */
+
+console.log(duck.constructor === Bird);
+console.log(beagle.constructor === Dog);
+/*both of these console.log calls would dsplay true in the console.
+
+Note that the constructor property is a reference to the constructor function that created the instance.
+The advantage of the constructor is that it's possible to check for this property to find out what kind of object its. Here's an example of how this could be used:
+*/
+function joinBirdFraternity(candidate) {
+    return (candidate.constructor === Bird)? true : false;;
+}
+console.log(joinBirdFraternity(duck));
+
+
