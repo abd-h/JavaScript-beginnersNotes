@@ -11,44 +11,6 @@ setFullName(firstAnd lastName);
 
 Run the test to see the expected output for each method. The methods that take an argument must accept only one argument and it has to be a string. The methods must be the only available means of interacting with the object.
 */
-// class Person {
-//     constructor(first, last) {
-//         this.first = first;
-//         this.last = last;
-//     }
-//     get firstName(){
-//         return this.first;
-//     }
-//     get lastName(){
-//         return this.last;
-//     }
-//     get fullName() {
-//         return `${this.first} ${this.last}`;
-//     }
-//     set firstName(name) {
-//         return this.first = name;
-//     }
-//     set lastName(name) {
-//         return name = this.last;
-//     }
-//     set fullName(name) {
-//         return name = `${this.first} ${this.last}`
-//     }
-// }
-
-// const bob = new Person("Bob", "Ross");
-
-
-// console.log(bob.fullName); // Bob Ross
-// console.log(bob instanceof Person); // true
-// console.log(bob.firstName)
-// console.log(bob.lastName)
-
-
-
-
-
-
 
 const Person = function(firstAndLast) {
     let first = firstAndLast.split(" ").slice(0,1).join(" ");
@@ -79,8 +41,6 @@ const Person = function(firstAndLast) {
         last = setFirstAndLast.split(" "). slice(1).join(" ");
         return fullname = `${setFirstAndLast}`;
     }
-
-  
 }
 let bob = new Person("Bob Ross");
 console.log(bob instanceof Person); // true
@@ -97,3 +57,4 @@ bob.setFullName("Haskel Curry")
 console.log(bob.getFirstName()); // Haskell 
 console.log(bob.getLastName()); // Curry
 console.log(Object.keys(bob).length);
+
